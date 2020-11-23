@@ -33,7 +33,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            LOLTOGETHER <i className="fab fa-typo3" />
+            LOLTOGETHER <i className="fas fa-smile" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -54,25 +54,21 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/boards"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
+              <Link to="/board" className="nav-links" onClick={closeMobileMenu}>
                 게시판
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to="/sign-up"
+                to="/log-in"
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                회원가입
+                로그인
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">회원가입</Button>}
+          {button && <Button buttonStyle="btn--outline">로그인</Button>}
         </div>
       </nav>
     </>
