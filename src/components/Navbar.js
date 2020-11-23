@@ -68,7 +68,9 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">로그인</Button>}
+          <Link to="/log-in" className="btn-mobile">
+            {button && <Button buttonStyle="btn--outline">로그인</Button>}
+          </Link>
         </div>
       </nav>
     </>

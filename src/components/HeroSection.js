@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 import Button from "./Button";
 import "./HeroSection.css";
@@ -11,13 +12,15 @@ const HeroSection = () => {
       <h1>MAKE YOUR LOL MATE</h1>
       <p>망설일 필요 없어요!</p>
       <div className="hero-btns">
-        <Button
-          className="btns"
-          buttonStyle="btn--outline"
-          buttonSize="btn--large"
-        >
-          회원가입
-        </Button>
+        <Link to="/sign-up" className="btn-mobile">
+          <Button
+            className="btns"
+            buttonStyle="btn--outline"
+            buttonSize="btn--large"
+          >
+            회원가입
+          </Button>
+        </Link>
       </div>
     </div>
   );
