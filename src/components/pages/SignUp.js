@@ -1,10 +1,18 @@
 import React from "react";
+import "../Signup.css";
+import SignUpForm from "../SignUpForm";
+import signupnami from "../../images/lolicon.png";
 
 const SignUp = () => {
   return (
-    <div>
-      <h1>회원가입</h1>
-    </div>
+    <>
+      <div className="form-container">
+        <div className="form-content-left">
+          <img src={signupnami} alt="signupnami" className="form-img" />
+        </div>
+        <SignUpForm />
+      </div>
+    </>
   );
 };
 
