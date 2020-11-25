@@ -6,19 +6,22 @@
   height: 600px;
   display: grid;
   grid-template-columns: 350px 650px;
-  background: linear-gradient(
-    90deg,
-    rgb(114, 102, 146) 0%,
-    rgb(55, 105, 103) 100%
-  );
 }
 
 /*------------------LEFT------------------*/
 .mp-container-left {
   position: relative;
+  background: linear-gradient(
+    90deg,
+    rgb(184, 171, 219) 0%,
+    rgb(55, 105, 103) 100%
+  );
+  border-right: 2mm ridge rgba(181, 240, 255, 0.932);
+  border-radius: 10px 0 0 10px;
 }
 
 .mp-container h1 {
+  margin-top: 20px;
   color: white;
   text-align: center;
 }
@@ -45,6 +48,12 @@
 /*---------------RIGT START---------------------*/
 .mp-container-right {
   position: relative;
+  background: linear-gradient(
+    90deg,
+    rgb(55, 105, 103) 0%,
+    rgb(25, 182, 177) 100%
+  );
+  border-radius: 0 10px 10px 0;
 }
 
 /*---------------RIGT END---------------------*/
