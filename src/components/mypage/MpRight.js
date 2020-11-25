@@ -3,7 +3,7 @@ import "../css/MyPage.css";
 
 const MpRight = () => {
   const [input, setInput] = useState("");
-  const [champ, setChamp] = useState([{ id: 0, name: "" }]);
+  const [champ, setChamp] = useState([]);
   const [nextId, setNextId] = useState(0);
   const handleInput = (e) => {
     setInput(e.target.value);
@@ -19,9 +19,7 @@ const MpRight = () => {
     setChamp(nextChamp);
     console.log(champ);
   };
-  const champList = champ.map((name, index) => (
-    <li key={index}>{champ.name}</li>
-  ));
+  const champList = champ.map((champ) => <li key={champ.id}>{champ.name}</li>);
 
   return (
     <div className="mp-container-right">
