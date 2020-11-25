@@ -1,14 +1,14 @@
 import React from "react";
+import MpLeft from "../mypage/MpLeft";
+import MpRight from "../mypage/MpRight";
+
+import "../css/MyPage.css";
 
 const MyPage = () => {
   return (
-    <div>
-      <div>
-        <h1>프로필사진,닉네임</h1>
-      </div>
-      <div>
-        <h1>선호포지션, 선호챔피언</h1>
-      </div>
+    <div className="mp-container">
+      <MpLeft />
+      <MpRight />
     </div>
   );
 };

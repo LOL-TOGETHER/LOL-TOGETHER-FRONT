@@ -1,0 +1,50 @@
+/*OVERALL LAYOUT*/
+.mp-container {
+  margin: 28px auto;
+  width: 1000px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  height: 600px;
+  display: grid;
+  grid-template-columns: 350px 650px;
+  background: linear-gradient(
+    90deg,
+    rgb(114, 102, 146) 0%,
+    rgb(55, 105, 103) 100%
+  );
+}
+
+/*------------------LEFT------------------*/
+.mp-container-left {
+  position: relative;
+}
+
+.mp-container h1 {
+  color: white;
+  text-align: center;
+}
+
+.mp-profile {
+}
+
+.box-profile {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 30%;
+  overflow: hidden;
+  background: #873b96;
+}
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*------------------LEFT END------------------*/
+
+/*---------------RIGT START---------------------*/
+.mp-container-right {
+  position: relative;
+}
+
+/*---------------RIGT END---------------------*/

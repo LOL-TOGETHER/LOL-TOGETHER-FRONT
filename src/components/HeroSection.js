@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import Button from "./Button";
-import "./HeroSection.css";
+import "./css/HeroSection.css";
 
 const HeroSection = () => {
   return (

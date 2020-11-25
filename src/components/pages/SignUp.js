@@ -1,5 +1,5 @@
 import React from "react";
-import "../Signup.css";
+import "../css/Signup.css";
 import SignUpForm from "../SignUpForm";
 import signupnami from "../../images/lolicon.png";
 

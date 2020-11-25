@@ -1,6 +1,6 @@
 import React from "react";
 import LoginForm from "../LoginForm";
-import "../Login.css";
+import "../css/Login.css";
 import signupnami from "../../images/lolicon.png";
 
 const Login = () => {
