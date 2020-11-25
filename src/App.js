@@ -8,6 +8,8 @@ import MyPage from "./components/pages/MyPage";
 import Board from "./components/pages/Board";
 import SignUp from "./components/pages/SignUp";
 import Login from "./components/pages/Login";
+import Routes from "./routes/index";
+
 function App() {
   return (
     <>
@@ -22,6 +24,8 @@ function App() {
           <Route path="/log-in" exact component={Login} />
         </Switch>
       </Router>
+
+      <Routes />
     </>
   );
 }
