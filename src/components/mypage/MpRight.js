@@ -9,7 +9,8 @@ const MpRight = () => {
     setInput(e.target.value);
   };
 
-  const OnClickButton = () => {
+  const OnClickButton = (e) => {
+    e.preventDefault();
     const nextChamp = champ.concat({
       id: nextId,
       name: input,
@@ -17,7 +18,7 @@ const MpRight = () => {
 
     setNextId(nextId + 1);
     setChamp(nextChamp);
-    console.log(champ);
+    setInput("");
   };
   const champList = champ.map((champ) => <li key={champ.id}>{champ.name}</li>);
 
@@ -25,15 +26,17 @@ const MpRight = () => {
     <div className="mp-container-right">
       <div>
         <h1>선호챔피언</h1>
-        <input
-          value={input}
-          onChange={handleInput}
-          placeholder="챔피언을 입력하시오."
-        />
-        <button onClick={OnClickButton}>추가</button>
-        <ul>{champList}</ul>
+        <form className="right-form" onSubmit={OnClickButton}>
+          <input
+            value={input}
+            onChange={handleInput}
+            placeholder="챔피언을 입력하시오."
+          />
+          <button type="submit">추가</button>
+          <ul>{champList}</ul>
+        </form>
       </div>
-      <div>
+      <div className="">
         <h1>선호포지션</h1>
       </div>
     </div>

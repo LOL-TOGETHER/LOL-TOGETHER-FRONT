@@ -45,7 +45,7 @@
 
 /*------------------LEFT END------------------*/
 
-/*---------------RIGT START---------------------*/
+/*---------------RIGHT START---------------------*/
 .mp-container-right {
   position: relative;
   background: linear-gradient(
@@ -56,4 +56,17 @@
   border-radius: 0 10px 10px 0;
 }
 
-/*---------------RIGT END---------------------*/
+.right-form {
+  width: 600px;
+  height: 250px;
+  position: relative;
+  margin: 20px auto;
+  top: 30%;
+  left: 32%;
+}
+
+.mp-container-right ul {
+  list-style-type: none;
+}
+
+/*---------------RIGHT END---------------------*/

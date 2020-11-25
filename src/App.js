@@ -14,9 +14,8 @@ import Routes from "./routes/index";
 function App() {
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
+
       <Routes />
     </>
   );

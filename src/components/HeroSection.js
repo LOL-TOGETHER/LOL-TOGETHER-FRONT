@@ -8,7 +8,6 @@ const HeroSection = () => {
   return (
     <div className="hero-container">
       <video src="/videos/loltogether.mp4" autoPlay loop muted />
-
       <h1>MAKE YOUR LOL MATE</h1>
       <p>망설일 필요 없어요!</p>
       <div className="hero-btns">
