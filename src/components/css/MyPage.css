@@ -68,5 +68,21 @@
 .mp-container-right ul {
   list-style-type: none;
 }
+.mp-container-right li {
+  float: bottom;
+  font-weight: bold;
+  font-size:20px;
+}
+.lux {
+  width: 50px;
+  height: 50px;
+}
+.list-info {
+  border: black solid;
+}
 
+.favchamp-info {
+  display: flex;
+  flex-direction: column;
+}
 /*---------------RIGHT END---------------------*/
