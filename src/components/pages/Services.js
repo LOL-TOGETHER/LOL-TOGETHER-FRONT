@@ -1,6 +1,10 @@
-import React from 'react';
-import '../../App.css';
+import React, { useEffect } from "react";
+import champData from "../../static-data/champ-static-data";
 
-export default function Services() {
-  return <h1 className='services'>SERVICES</h1>;
-}
+const Services = () => {
+  <div>
+    <div>SERVICES</div>
+  </div>;
+};
+
+export default Services;

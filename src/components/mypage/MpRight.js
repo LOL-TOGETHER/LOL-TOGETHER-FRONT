@@ -1,31 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/MyPage.css";
-import champimage from "../../images/Lux.png";
-import champData from '../../static-data/champ-static-data';
+import champData from "../../static-data/champ-static-data";
 
 const MpRight = () => {
   const [input, setInput] = useState("");
   const [champ, setChamp] = useState([]);
   const [nextId, setNextId] = useState(0);
+
   const handleInput = (e) => {
     setInput(e.target.value);
   };
 
   const OnClickButton = (e) => {
     e.preventDefault();
+    let champdatainfo;
+    for (let i in champData.data) {
+      if (champData.data[i].name === input)
+        champdatainfo = champData.data[i].key;
+      console.log(champdatainfo);
+    }
+
     const nextChamp = champ.concat({
       id: nextId,
       name: input,
+      icon: champdatainfo,
     });
 
     setNextId(nextId + 1);
     setChamp(nextChamp);
+
     setInput("");
   };
+
   const champList = champ.map((champ) => (
     <li key={champ.id}>
       {champ.name}
-      <img className="lux" alt="" src={champimage} />
+      <img
+        className="lux"
+        alt=""
+        src={`https://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${champ.icon}.png`}
+      />
     </li>
   ));
 
