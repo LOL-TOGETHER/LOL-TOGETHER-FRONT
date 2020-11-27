@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../css/MyPage.css";
 import champData from "../../static-data/champ-static-data";
 
@@ -34,33 +34,38 @@ const MpRight = () => {
 
   const champList = champ.map((champ) => (
     <li key={champ.id}>
+      <div>
+        <img
+          className="iconimg"
+          alt=""
+          src={`https://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${champ.icon}.png`}
+        />
+      </div>
       {champ.name}
-      <img
-        className="lux"
-        alt=""
-        src={`https://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${champ.icon}.png`}
-      />
     </li>
   ));
 
   return (
     <div className="mp-container-right">
       <div className="favchamp-info">
-        <div>
-          <h1>선호챔피언</h1>
-          <form className="right-form" onSubmit={OnClickButton}>
+        <form className="right-form" onSubmit={OnClickButton}>
+          <h1>선호하는 챔피언</h1>
+          <div className="mp-inputs">
             <input
+              className="mp-input"
               value={input}
               onChange={handleInput}
               placeholder="챔피언을 입력하시오."
             />
-            <button type="submit">추가</button>
-            <ul>{champList}</ul>
-          </form>
-        </div>
+            <button className="mp-button" type="submit">
+              추가
+            </button>
+          </div>
+        </form>
+        <ul>{champList}</ul>
       </div>
-      <div className="">
-        <h1>선호포지션</h1>
+      <div className="preferline">
+        <h1>선호하는 라인</h1>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import champData from "../../static-data/champ-static-data";
-
+import React from "react";
 const Services = () => {
-  <div>
-    <div>SERVICES</div>
-  </div>;
+  return (
+    <div>
+      <h1 className="services">SERVICES</h1>
+    </div>
+  );
 };
 
 export default Services;
