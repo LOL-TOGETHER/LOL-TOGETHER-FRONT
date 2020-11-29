@@ -24,7 +24,7 @@ const Board = () => {
                   <td>{post.username}</td>
 
                   <td>
-                    <Link to="/detailpage.js">{post.content}</Link>
+                    <Link to="/detailpage">{post.content}</Link>
                   </td>
 
                   <td>{post.updatedTime}</td>
