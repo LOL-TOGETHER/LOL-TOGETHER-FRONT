@@ -5,11 +5,12 @@
   padding-bottom: 12px;
   margin-top: 20px;
   padding-top: 1px;
+  color: white;
 }
 
 .beigeLayer .detail-main {
   width: 650px;
-  min-height: 2600px;
+  min-height: 1200px;
   overflow: hidden;
   background: #000917 none no-repeat right top;
   background-image: url("../../images/varus.jpg");
@@ -18,7 +19,55 @@
 }
 .beigeLayer .detail-main .detail-shadow {
   width: 650px;
-  min-height: 2600px;
+  min-height: 1200px;
   background: no-repeat left top;
   background-image: url("../../images/shadow.png");
+  display: grid;
+  grid-template-rows: 200px 700px;
+}
+.title {
+  width: 650px;
+  height: 200px;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(255, 186, 0);
+  margin: 44px 0px 0px 18px;
+}
+.content-dt {
+  position: relative;
+  color: white;
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 60px;
+}
+.comment_container {
+  margin: 10px 50px;
+  border-top: solid 1px #ababab;
+}
+
+.comment_write {
+  height: 150px;
+  border-bottom: solid 1px #ababab;
+}
+.comment_write textarea {
+  width: 80%;
+  padding: 10px;
+  resize: none;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.comment_write button {
+  position: absolute;
+  width: 5%;
+  height: 12.7%;
+  margin-top: -0px;
+  background-color: white;
+  border: solid 1px #ababab;
+  cursor: pointer;
+}
+
+ul {
+  margin-left: 50px;
+  list-style: none;
 }
