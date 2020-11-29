@@ -46,11 +46,11 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                to="/services"
+                to="/mypage"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                서비스
+                마이페이지
               </Link>
             </li>
             <li className="nav-item">
