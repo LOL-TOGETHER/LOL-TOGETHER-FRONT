@@ -7,6 +7,11 @@ const Board = () => {
   return (
     <div>
       <div className="table-container">
+        <div className="wrt">
+          <Link to="/write">
+            <button>글쓰기</button>
+          </Link>
+        </div>
         <table>
           <thead>
             <tr>

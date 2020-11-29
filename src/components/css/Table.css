@@ -35,3 +35,29 @@ a {
 a:hover {
   color: rgb(185, 183, 183);
 }
+
+.wrt {
+  background: linear-gradient(
+    90deg,
+    rgba(19, 2, 24, 0.774) 0%,
+    rgb(74, 2, 122) 100%
+  );
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: solid 1px #eee5e5;
+}
+.wrt button {
+  border: 0;
+  outline: 0;
+  background: none;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-right: 10px;
+  padding: 4px;
+}
+.wrt button:hover {
+  color: rgb(218, 211, 211);
+}
