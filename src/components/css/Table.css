@@ -1,0 +1,24 @@
+.table-container {
+  width: 1000px;
+  display: grid;
+  left: 17%;
+  top: 15%;
+  margin-bottom: 100px;
+  position: absolute;
+  background: url(../../images/img-3.jpg) no-repeat;
+
+  object-fit: cover;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+table {
+  color: white;
+  width: 100%;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
+}
+th,
+td {
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
