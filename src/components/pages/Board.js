@@ -1,9 +1,31 @@
 import React from "react";
+import posts from "../../static-data/tabledata";
 
 const Board = () => {
   return (
     <div>
-      <h1 className="services">이곳은 게시판이 될것이여</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>태그</th>
+            <th>작성자</th>
+            <th>글제목</th>
+            <th>작성시간</th>
+          </tr>
+        </thead>
+        <tbody>
+          {posts.map((post) => {
+            return (
+              <tr>
+                <td>{post.tag}</td>
+                <td>{post.username}</td>
+                <td>{post.content}</td>
+                <td>{post.updatedTime}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };
