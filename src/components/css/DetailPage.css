@@ -1,0 +1,24 @@
+.beigeLayer {
+  width: 704px;
+  background: url(../../images/background.jpg);
+  margin-left: 420px;
+  padding-bottom: 12px;
+  margin-top: 20px;
+  padding-top: 1px;
+}
+
+.beigeLayer .detail-main {
+  width: 650px;
+  min-height: 2600px;
+  overflow: hidden;
+  background: #000917 none no-repeat right top;
+  background-image: url("../../images/varus.jpg");
+  margin: 23px 0px 0px 27px;
+  padding-bottom: 6px;
+}
+.beigeLayer .detail-main .detail-shadow {
+  width: 650px;
+  min-height: 2600px;
+  background: no-repeat left top;
+  background-image: url("../../images/shadow.png");
+}
