@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import posts from "../../static-data/tabledata";
 import "../css/Table.css";
 
@@ -21,7 +22,11 @@ const Board = () => {
                 <tr>
                   <td>{post.tag}</td>
                   <td>{post.username}</td>
-                  <td>{post.content}</td>
+
+                  <td>
+                    <Link to="/detailpage.js">{post.content}</Link>
+                  </td>
+
                   <td>{post.updatedTime}</td>
                 </tr>
               );
