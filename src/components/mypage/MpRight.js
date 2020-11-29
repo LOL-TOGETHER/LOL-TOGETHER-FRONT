@@ -119,11 +119,18 @@ const MpRight = () => {
             onClick={onClickLine}
           />
         </div>
-        {buttonState ? (
-          <img className="img-line-reply" src={`/images/${buttonState}.PNG`} />
-        ) : (
-          <h3>라인을 고르시오</h3>
-        )}
+        <h3>라인을 고르시오:</h3>
+        <div className="lineimgcont">
+          {buttonState ? (
+            <img
+              className="img-line-reply"
+              src={`/images/${buttonState}.PNG`}
+              alt=""
+            />
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
     </div>
   );

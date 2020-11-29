@@ -47,6 +47,8 @@
 
 /*---------------RIGHT START---------------------*/
 .mp-container-right {
+  display: grid;
+  grid-template-rows: 200px 400px;
   position: relative;
   background: linear-gradient(90deg, rgb(50, 50, 50) 0%, rgb(48, 48, 48) 100%);
   border-radius: 0 10px 10px 0;
@@ -62,7 +64,9 @@
 }
 
 .mp-container-right ul {
+  margin-top: 20px;
   list-style-type: none;
+  margin-right: 100px;
   text-align: center;
 }
 .mp-container-right li {
@@ -78,6 +82,8 @@
 }
 
 .favchamp-info {
+  margin-bottom: 100px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -93,11 +99,11 @@
   outline: none;
   border-radius: 2px;
   height: 40px;
-  width: 70%;
+  width: 80%;
   border: none;
 }
 .mp-button {
-  width: 30%;
+  width: 20%;
   height: 40px;
   border-radius: 2px;
   background: linear-gradient(
@@ -146,4 +152,13 @@
 .img-line:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
+}
+.img-line-reply {
+  margin-top: 40px;
+  margin-left: 270px;
+}
+.preferline h3 {
+  color: white;
+  margin-left: 260px;
+  margin-top: 20px;
 }
