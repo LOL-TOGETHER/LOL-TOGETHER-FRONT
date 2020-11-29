@@ -48,7 +48,7 @@
 /*---------------RIGHT START---------------------*/
 .mp-container-right {
   position: relative;
-  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
+  background: linear-gradient(90deg, rgb(50, 50, 50) 0%, rgb(48, 48, 48) 100%);
   border-radius: 0 10px 10px 0;
 }
 
@@ -121,7 +121,29 @@
   transition: all 0.4s ease-out;
 }
 
-.preferline {
+.preferline button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+.preferline button:hover {
+  border: none;
 }
 
-/*---------------RIGHT END---------------------*/
+.img-line {
+  width: 70px;
+  height: 70px;
+  margin-left: 50px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.img-line:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}

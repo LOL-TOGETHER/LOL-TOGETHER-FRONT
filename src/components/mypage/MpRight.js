@@ -6,6 +6,12 @@ const MpRight = () => {
   const [input, setInput] = useState("");
   const [champ, setChamp] = useState([]);
   const [nextId, setNextId] = useState(0);
+  const [buttonState, setButtonState] = useState("");
+
+  const onClickLine = (e) => {
+    setButtonState(e.target.name);
+    console.log(buttonState);
+  };
 
   const handleInput = (e) => {
     setInput(e.target.value);
@@ -66,6 +72,58 @@ const MpRight = () => {
       </div>
       <div className="preferline">
         <h1>선호하는 라인</h1>
+        <div className="preferline-1">
+          <input
+            className="img-line"
+            type="image"
+            src="/images/top.PNG"
+            alt=""
+            name="top"
+            value="TOP"
+            onClick={onClickLine}
+          />
+          <input
+            className="img-line"
+            type="image"
+            src="/images/jungle.PNG"
+            alt=""
+            name="jungle"
+            value="JUNGLE"
+            onClick={onClickLine}
+          />
+          <input
+            className="img-line"
+            type="image"
+            src="/images/mid.PNG"
+            alt=""
+            name="mid"
+            value="MID"
+            onClick={onClickLine}
+          />
+          <input
+            className="img-line"
+            type="image"
+            src="/images/bot.PNG"
+            alt=""
+            name="bot"
+            value="BOTTOM"
+            onClick={onClickLine}
+          />
+          <input
+            className="img-line"
+            type="image"
+            src="/images/sup.PNG"
+            alt=""
+            name="sup"
+            value="SUPPORT"
+            onClick={onClickLine}
+          />
+        </div>
+        {buttonState ? (
+          <img className="img-line-reply" src={`/images/${buttonState}.PNG`} />
+        ) : (
+          <h3>라인을 고르시오</h3>
+        )}
       </div>
     </div>
   );
