@@ -40,6 +40,7 @@ const Board = () => {
             })}
           </tbody>
         </table>
+        <div className="pgntion">PAGINATION HERE</div>
       </div>
     </div>
   );
