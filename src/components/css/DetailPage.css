@@ -71,36 +71,3 @@ ul {
   margin-left: 50px;
   list-style: none;
 }
-
-.radiocontainer {
-  width: 600px;
-  display: flex;
-  justify-content: space-between;
-}
-
-textarea {
-  min-width: 600px;
-  min-height: 500px;
-}
-
-.titleinput {
-  margin-left: 10px;
-  width: 550px;
-}
-.titlesemi {
-  display: flex;
-  margin-bottom: 15px;
-}
-
-.content-h3 {
-  color: rgb(255, 186, 0);
-  text-align: left;
-  margin-left: 15px;
-}
-
-.content-dt-wr {
-  position: relative;
-  color: white;
-  text-align: center;
-  margin-right: 17px;
-}
