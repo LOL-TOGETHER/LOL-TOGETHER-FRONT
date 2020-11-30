@@ -1,4 +1,4 @@
-.beigeLayer {
+.beigeLayer-wr {
   width: 704px;
   background: url(../../images/background.jpg);
   margin-left: 420px;
@@ -8,68 +8,30 @@
   color: white;
 }
 
-.beigeLayer .detail-main {
+.beigeLayer-wr .detail-main-wr {
   width: 650px;
-  min-height: 1200px;
+  min-height: 900px;
   overflow: hidden;
   background: #000917 none no-repeat right top;
-  background-image: url("../../images/varus.jpg");
+  background-image: url("../../images/unnamed.jpg");
   margin: 23px 0px 0px 27px;
   padding-bottom: 6px;
 }
-.beigeLayer .detail-main .detail-shadow {
+.beigeLayer-wr .detail-main-wr .detail-shadow-wr {
   width: 650px;
-  min-height: 1200px;
+  min-height: 900px;
   background: no-repeat left top;
   background-image: url("../../images/shadow.png");
   display: grid;
-  grid-template-rows: 200px 700px;
+  grid-template-rows: 200px 550px;
 }
-.title {
+.title-wr {
   width: 650px;
   height: 200px;
   font-size: 17px;
   font-weight: bold;
   color: rgb(255, 186, 0);
   margin: 44px 0px 0px 18px;
-}
-.content-dt {
-  position: relative;
-  color: white;
-  text-align: center;
-  margin-left: 40px;
-  margin-right: 60px;
-}
-.comment_container {
-  margin: 10px 50px;
-  border-top: solid 1px #ababab;
-}
-
-.comment_write {
-  height: 150px;
-  border-bottom: solid 1px #ababab;
-}
-.comment_write textarea {
-  width: 80%;
-  padding: 10px;
-  resize: none;
-  font-size: 15px;
-  line-height: 25px;
-}
-
-.comment_write button {
-  position: absolute;
-  width: 5%;
-  height: 12.7%;
-  margin-top: -0px;
-  background-color: white;
-  border: solid 1px #ababab;
-  cursor: pointer;
-}
-
-ul {
-  margin-left: 50px;
-  list-style: none;
 }
 
 .radiocontainer {
@@ -103,4 +65,8 @@ textarea {
   color: white;
   text-align: center;
   margin-right: 17px;
+}
+
+.wr-button {
+  text-align: center;
 }

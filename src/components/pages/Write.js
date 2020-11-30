@@ -1,0 +1,92 @@
+import React, { useState } from "react";
+import "../css/Write.css";
+
+const Write = () => {
+  const [selected, SetSelected] = useState("");
+  const HandleSelected = (e) => {
+    SetSelected(e.target.value);
+  };
+  return (
+    <div>
+      <div className="beigeLayer-wr">
+        <div className="detail-main-wr">
+          <div className="detail-shadow-wr">
+            <div className="title-wr">
+              <div className="titlesemi">
+                <div>
+                  <h3>제목:</h3>
+                </div>
+                <div>
+                  <input
+                    className="titleinput"
+                    placeholder="제목을 입력하세요"
+                  />
+                </div>
+              </div>
+              <h3>주 라인:</h3>
+              <div className="radiocontainer">
+                <div>
+                  <input
+                    type="radio"
+                    value="top"
+                    onClick={HandleSelected}
+                    checked={selected === "top"}
+                  />
+                  탑
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    value="jug"
+                    onClick={HandleSelected}
+                    checked={selected === "jug"}
+                  />
+                  정글
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    value="mid"
+                    onClick={HandleSelected}
+                    checked={selected === "mid"}
+                  />
+                  미드
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    value="bot"
+                    onClick={HandleSelected}
+                    checked={selected === "bot"}
+                  />
+                  원딜
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    value="sup"
+                    onClick={HandleSelected}
+                    checked={selected === "sup"}
+                  />
+                  서폿
+                </div>
+              </div>
+            </div>
+            <div className="content-dt-wr">
+              <h3 className="content-h3">내용:</h3>
+              <textarea>
+                자주하는 챔피언, 구하고자 하는 라이너, 자신의 성향 등등
+                입력하세요 ~
+              </textarea>
+            </div>
+            <div className="wr-button">
+              <button>등록하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Write;
