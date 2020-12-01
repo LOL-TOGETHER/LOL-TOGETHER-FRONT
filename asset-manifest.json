@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/LOL-TOGETHER-FRONT/static/css/main.596f7ee0.chunk.css",
+    "main.js": "/LOL-TOGETHER-FRONT/static/js/main.d647b35f.chunk.js",
+    "main.js.map": "/LOL-TOGETHER-FRONT/static/js/main.d647b35f.chunk.js.map",
+    "runtime-main.js": "/LOL-TOGETHER-FRONT/static/js/runtime-main.3aeb68a5.js",
+    "runtime-main.js.map": "/LOL-TOGETHER-FRONT/static/js/runtime-main.3aeb68a5.js.map",
+    "static/js/2.7914c3e6.chunk.js": "/LOL-TOGETHER-FRONT/static/js/2.7914c3e6.chunk.js",
+    "static/js/2.7914c3e6.chunk.js.map": "/LOL-TOGETHER-FRONT/static/js/2.7914c3e6.chunk.js.map",
+    "index.html": "/LOL-TOGETHER-FRONT/index.html",
+    "static/css/main.596f7ee0.chunk.css.map": "/LOL-TOGETHER-FRONT/static/css/main.596f7ee0.chunk.css.map",
+    "static/js/2.7914c3e6.chunk.js.LICENSE.txt": "/LOL-TOGETHER-FRONT/static/js/2.7914c3e6.chunk.js.LICENSE.txt",
+    "static/media/Write.css": "/LOL-TOGETHER-FRONT/static/media/shadow.fd13a69e.png",
+    "static/media/Table.css": "/LOL-TOGETHER-FRONT/static/media/img-3.4a5d0302.jpg",
+    "static/media/Signup.css": "/LOL-TOGETHER-FRONT/static/media/img-home.bd9022b9.jpg",
+    "static/media/lolicon.1aee606b.png": "/LOL-TOGETHER-FRONT/static/media/lolicon.1aee606b.png",
+    "static/media/lolicon.72617d18.jpg": "/LOL-TOGETHER-FRONT/static/media/lolicon.72617d18.jpg",
+    "static/media/DetailPage.css": "/LOL-TOGETHER-FRONT/static/media/varus.c6624add.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3aeb68a5.js",
+    "static/js/2.7914c3e6.chunk.js",
+    "static/css/main.596f7ee0.chunk.css",
+    "static/js/main.d647b35f.chunk.js"
+  ]
+}
