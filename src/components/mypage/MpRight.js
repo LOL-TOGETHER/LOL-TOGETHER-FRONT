@@ -33,11 +33,6 @@ const MpRight = () => {
       engname: champdatainfo,
     });
 
-    // if (!(input in champdataname)) {
-    //   alert("존재x");
-    //   nextChamp.pop();
-    // }
-
     if (nextChamp[3]) {
       nextChamp.pop();
       alert("3개만 쓰시오");
