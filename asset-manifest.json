@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/LOL-TOGETHER-FRONT/static/css/main.596f7ee0.chunk.css",
-    "main.js": "/LOL-TOGETHER-FRONT/static/js/main.d647b35f.chunk.js",
-    "main.js.map": "/LOL-TOGETHER-FRONT/static/js/main.d647b35f.chunk.js.map",
+    "main.js": "/LOL-TOGETHER-FRONT/static/js/main.6028e25b.chunk.js",
+    "main.js.map": "/LOL-TOGETHER-FRONT/static/js/main.6028e25b.chunk.js.map",
     "runtime-main.js": "/LOL-TOGETHER-FRONT/static/js/runtime-main.3aeb68a5.js",
     "runtime-main.js.map": "/LOL-TOGETHER-FRONT/static/js/runtime-main.3aeb68a5.js.map",
     "static/js/2.7914c3e6.chunk.js": "/LOL-TOGETHER-FRONT/static/js/2.7914c3e6.chunk.js",
@@ -11,16 +11,23 @@
     "static/css/main.596f7ee0.chunk.css.map": "/LOL-TOGETHER-FRONT/static/css/main.596f7ee0.chunk.css.map",
     "static/js/2.7914c3e6.chunk.js.LICENSE.txt": "/LOL-TOGETHER-FRONT/static/js/2.7914c3e6.chunk.js.LICENSE.txt",
     "static/media/Write.css": "/LOL-TOGETHER-FRONT/static/media/shadow.fd13a69e.png",
+    "static/media/Position_Diamond-Jungle.45ac370e.png": "/LOL-TOGETHER-FRONT/static/media/Position_Diamond-Jungle.45ac370e.png",
+    "static/media/bot.483e3a2c.PNG": "/LOL-TOGETHER-FRONT/static/media/bot.483e3a2c.PNG",
     "static/media/Table.css": "/LOL-TOGETHER-FRONT/static/media/img-3.4a5d0302.jpg",
     "static/media/Signup.css": "/LOL-TOGETHER-FRONT/static/media/img-home.bd9022b9.jpg",
+    "static/media/jungle.5788be2e.PNG": "/LOL-TOGETHER-FRONT/static/media/jungle.5788be2e.PNG",
     "static/media/lolicon.1aee606b.png": "/LOL-TOGETHER-FRONT/static/media/lolicon.1aee606b.png",
-    "static/media/lolicon.72617d18.jpg": "/LOL-TOGETHER-FRONT/static/media/lolicon.72617d18.jpg",
+    "static/media/lolicon.7a9d2621.jpg": "/LOL-TOGETHER-FRONT/static/media/lolicon.7a9d2621.jpg",
+    "static/media/loltogether.ae5fbe83.mp4": "/LOL-TOGETHER-FRONT/static/media/loltogether.ae5fbe83.mp4",
+    "static/media/mid.287dd274.PNG": "/LOL-TOGETHER-FRONT/static/media/mid.287dd274.PNG",
+    "static/media/sup.538ce855.PNG": "/LOL-TOGETHER-FRONT/static/media/sup.538ce855.PNG",
+    "static/media/top.d6b47aba.PNG": "/LOL-TOGETHER-FRONT/static/media/top.d6b47aba.PNG",
     "static/media/DetailPage.css": "/LOL-TOGETHER-FRONT/static/media/varus.c6624add.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.3aeb68a5.js",
     "static/js/2.7914c3e6.chunk.js",
     "static/css/main.596f7ee0.chunk.css",
-    "static/js/main.d647b35f.chunk.js"
+    "static/js/main.6028e25b.chunk.js"
   ]
 }
