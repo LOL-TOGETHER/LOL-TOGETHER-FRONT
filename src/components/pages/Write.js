@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "../css/Write.css";
+import top from "../../images/Position_Diamond-Top.png";
+import jug from "../../images/Position_Diamond-Jungle.png";
+import mid from "../../images/Position_Diamond-Mid.png";
+import bot from "../../images/Position_Diamond-Bot.png";
+import sup from "../../images/Position_Diamond-Support.png";
 
 const Write = () => {
   const [selected, SetSelected] = useState("");
@@ -34,11 +39,7 @@ const Write = () => {
                       checked={selected === "top"}
                     />
                     탑
-                    <img
-                      className="writeicon"
-                      src="/images/Position_Diamond-Top.png"
-                      alt=""
-                    />
+                    <img className="writeicon" src={top} alt="" />
                   </label>
                 </div>
                 <div>
@@ -50,11 +51,7 @@ const Write = () => {
                       checked={selected === "jug"}
                     />
                     정글
-                    <img
-                      className="writeicon"
-                      src="/images/Position_Diamond-Jungle.png"
-                      alt=""
-                    />
+                    <img className="writeicon" src={jug} alt="" />
                   </label>
                 </div>
                 <div>
@@ -66,11 +63,7 @@ const Write = () => {
                       checked={selected === "mid"}
                     />
                     미드
-                    <img
-                      className="writeicon"
-                      src="/images/Position_Diamond-Mid.png"
-                      alt=""
-                    />
+                    <img className="writeicon" src={mid} alt="" />
                   </label>
                 </div>
                 <div>
@@ -82,16 +75,11 @@ const Write = () => {
                       checked={selected === "bot"}
                     />
                     원딜
-                    <img
-                      className="writeicon"
-                      src="/images/Position_Diamond-Bot.png"
-                      alt=""
-                    />
+                    <img className="writeicon" src={bot} alt="" />
                   </label>
                 </div>
                 <div>
                   <label>
-                    {" "}
                     <input
                       type="radio"
                       value="sup"
@@ -99,11 +87,7 @@ const Write = () => {
                       checked={selected === "sup"}
                     />
                     서폿
-                    <img
-                      className="writeicon"
-                      src="/images/Position_Diamond-Support.png"
-                      alt=""
-                    />
+                    <img className="writeicon" src={sup} alt="" />
                   </label>
                 </div>
               </div>

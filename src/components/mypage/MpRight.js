@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "../css/MyPage.css";
 import champData from "../../static-data/champ-static-data";
+import TOP from "../../images/top.PNG";
+import JUG from "../../images/jungle.PNG";
+import MID from "../../images/mid.PNG";
+import BOT from "../../images/bot.PNG";
+import SUP from "../../images/sup.PNG";
 
 const MpRight = () => {
   const [input, setInput] = useState("");
@@ -10,7 +15,6 @@ const MpRight = () => {
 
   const onClickLine = (e) => {
     setButtonState(e.target.name);
-    console.log(buttonState);
   };
 
   const handleInput = (e) => {
@@ -82,7 +86,7 @@ const MpRight = () => {
           <input
             className="img-line"
             type="image"
-            src="/images/top.PNG"
+            src={TOP}
             alt=""
             name="top"
             value="TOP"
@@ -91,7 +95,7 @@ const MpRight = () => {
           <input
             className="img-line"
             type="image"
-            src="/images/jungle.PNG"
+            src={JUG}
             alt=""
             name="jungle"
             value="JUNGLE"
@@ -100,7 +104,7 @@ const MpRight = () => {
           <input
             className="img-line"
             type="image"
-            src="/images/mid.PNG"
+            src={MID}
             alt=""
             name="mid"
             value="MID"
@@ -109,7 +113,7 @@ const MpRight = () => {
           <input
             className="img-line"
             type="image"
-            src="/images/bot.PNG"
+            src={BOT}
             alt=""
             name="bot"
             value="BOTTOM"
@@ -118,7 +122,7 @@ const MpRight = () => {
           <input
             className="img-line"
             type="image"
-            src="/images/sup.PNG"
+            src={SUP}
             alt=""
             name="sup"
             value="SUPPORT"
@@ -127,12 +131,28 @@ const MpRight = () => {
         </div>
         <h3>라인을 고르시오:</h3>
         <div className="lineimgcont">
-          {buttonState ? (
-            <img
-              className="img-line-reply"
-              src={`/images/${buttonState}.PNG`}
-              alt=""
-            />
+          {buttonState === "top" ? (
+            <img className="img-line-reply" src={TOP} alt="" />
+          ) : (
+            <div></div>
+          )}
+          {buttonState === "jungle" ? (
+            <img className="img-line-reply" src={JUG} alt="" />
+          ) : (
+            <div></div>
+          )}
+          {buttonState === "mid" ? (
+            <img className="img-line-reply" src={MID} alt="" />
+          ) : (
+            <div></div>
+          )}
+          {buttonState === "bot" ? (
+            <img className="img-line-reply" src={BOT} alt="" />
+          ) : (
+            <div></div>
+          )}
+          {buttonState === "sup" ? (
+            <img className="img-line-reply" src={SUP} alt="" />
           ) : (
             <div></div>
           )}
