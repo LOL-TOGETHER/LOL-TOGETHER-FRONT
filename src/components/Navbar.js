@@ -53,6 +53,7 @@ const Navbar = () => {
                 마이페이지
               </Link>
             </li>
+
             <li className="nav-item">
               <Link to="/board" className="nav-links" onClick={closeMobileMenu}>
                 게시판
