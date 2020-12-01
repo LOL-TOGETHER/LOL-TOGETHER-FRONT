@@ -13,7 +13,7 @@
   min-height: 900px;
   overflow: hidden;
   background: #000917 none no-repeat right top;
-  background-image: url("../../images/unnamed.jpg");
+  background-image: url("../../images/Ahri.jpg");
   margin: 23px 0px 0px 27px;
   padding-bottom: 6px;
 }
@@ -43,6 +43,8 @@
 .wr-textarea {
   min-width: 600px;
   min-height: 500px;
+  max-width: 600px;
+  max-height: 500px;
 }
 
 .titleinput {
@@ -69,4 +71,9 @@
 
 .wr-button {
   text-align: center;
+}
+
+.writeicon {
+  width: 50px;
+  height: 50px;
 }

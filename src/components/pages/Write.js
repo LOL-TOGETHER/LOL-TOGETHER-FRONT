@@ -26,61 +26,97 @@ const Write = () => {
               <h3>주 라인:</h3>
               <div className="radiocontainer">
                 <div>
-                  <input
-                    type="radio"
-                    value="top"
-                    onClick={HandleSelected}
-                    checked={selected === "top"}
-                  />
-                  탑
+                  <label>
+                    <input
+                      type="radio"
+                      value="top"
+                      onClick={HandleSelected}
+                      checked={selected === "top"}
+                    />
+                    탑
+                    <img
+                      className="writeicon"
+                      src="/images/Position_Diamond-Top.png"
+                      alt=""
+                    />
+                  </label>
                 </div>
                 <div>
-                  <input
-                    type="radio"
-                    value="jug"
-                    onClick={HandleSelected}
-                    checked={selected === "jug"}
-                  />
-                  정글
+                  <label>
+                    <input
+                      type="radio"
+                      value="jug"
+                      onClick={HandleSelected}
+                      checked={selected === "jug"}
+                    />
+                    정글
+                    <img
+                      className="writeicon"
+                      src="/images/Position_Diamond-Jungle.png"
+                      alt=""
+                    />
+                  </label>
                 </div>
                 <div>
-                  <input
-                    type="radio"
-                    value="mid"
-                    onClick={HandleSelected}
-                    checked={selected === "mid"}
-                  />
-                  미드
+                  <label>
+                    <input
+                      type="radio"
+                      value="mid"
+                      onClick={HandleSelected}
+                      checked={selected === "mid"}
+                    />
+                    미드
+                    <img
+                      className="writeicon"
+                      src="/images/Position_Diamond-Mid.png"
+                      alt=""
+                    />
+                  </label>
                 </div>
                 <div>
-                  <input
-                    type="radio"
-                    value="bot"
-                    onClick={HandleSelected}
-                    checked={selected === "bot"}
-                  />
-                  원딜
+                  <label>
+                    <input
+                      type="radio"
+                      value="bot"
+                      onClick={HandleSelected}
+                      checked={selected === "bot"}
+                    />
+                    원딜
+                    <img
+                      className="writeicon"
+                      src="/images/Position_Diamond-Bot.png"
+                      alt=""
+                    />
+                  </label>
                 </div>
                 <div>
-                  <input
-                    type="radio"
-                    value="sup"
-                    onClick={HandleSelected}
-                    checked={selected === "sup"}
-                  />
-                  서폿
+                  <label>
+                    {" "}
+                    <input
+                      type="radio"
+                      value="sup"
+                      onClick={HandleSelected}
+                      checked={selected === "sup"}
+                    />
+                    서폿
+                    <img
+                      className="writeicon"
+                      src="/images/Position_Diamond-Support.png"
+                      alt=""
+                    />
+                  </label>
                 </div>
               </div>
             </div>
             <div className="content-dt-wr">
               <h3 className="content-h3">내용:</h3>
-              <textarea>
-                자주하는 챔피언, 구하고자 하는 라이너, 자신의 성향 등등
+              <textarea className="wr-textarea">
+                자주하는 챔피언, 구하고자 하는 라이너, 자신의 롤 성향 등등
                 입력하세요 ~
               </textarea>
             </div>
             <div className="wr-button">
-              <button>등록하기</button>
+              <button type="submit">작성</button>
             </div>
           </div>
         </div>

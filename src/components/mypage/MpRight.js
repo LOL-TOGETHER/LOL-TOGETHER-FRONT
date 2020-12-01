@@ -23,7 +23,6 @@ const MpRight = () => {
     for (let i in champData.data) {
       if (champData.data[i].name === input)
         champdatainfo = champData.data[i].key;
-      console.log(champdatainfo);
     }
 
     const nextChamp = champ.concat({
@@ -31,6 +30,10 @@ const MpRight = () => {
       name: input,
       icon: champdatainfo,
     });
+    if (nextChamp[3]) {
+      nextChamp.pop();
+      alert("3개만 쓰시오");
+    }
 
     setNextId(nextId + 1);
     setChamp(nextChamp);
@@ -55,7 +58,7 @@ const MpRight = () => {
     <div className="mp-container-right">
       <div className="favchamp-info">
         <form className="right-form" onSubmit={OnClickButton}>
-          <h1>선호하는 챔피언</h1>
+          <h1>선호하는 챔피언(3개)</h1>
           <div className="mp-inputs">
             <input
               className="mp-input"
