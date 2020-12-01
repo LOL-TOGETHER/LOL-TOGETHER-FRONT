@@ -20,9 +20,11 @@ const MpRight = () => {
   const OnClickButton = (e) => {
     e.preventDefault();
     let champdatainfo;
+
     for (let i in champData.data) {
-      if (champData.data[i].name === input)
+      if (champData.data[i].name === input) {
         champdatainfo = champData.data[i].key;
+      }
     }
 
     const nextChamp = champ.concat({
@@ -30,6 +32,14 @@ const MpRight = () => {
       name: input,
       icon: champdatainfo,
     });
+
+    if (champData.data.name !== input) {
+      alert(
+        "해당하는 챔피언 이름이 없습니다. 정확한 이름과 띄어쓰기를 적용하여 적어주세요. 예) 미스포츈=> 미스 포츈"
+      );
+      nextChamp.pop();
+    }
+
     if (nextChamp[3]) {
       nextChamp.pop();
       alert("3개만 쓰시오");
