@@ -33,13 +33,12 @@ const MpRight = () => {
       icon: champdatainfo,
     });
 
-    if (champData.data.name !== input) {
-      alert(
-        "해당하는 챔피언 이름이 없습니다. 정확한 이름과 띄어쓰기를 적용하여 적어주세요. 예) 미스포츈=> 미스 포츈"
-      );
-      nextChamp.pop();
-    }
-
+    // if (champData.data.name !== input) {
+    //   alert(
+    //     "해당하는 챔피언 이름이 없습니다. 정확한 이름과 띄어쓰기를 적용하여 적어주세요. 예) 미스포츈=> 미스 포츈"
+    //   );
+    //   nextChamp.pop();
+    // }
     if (nextChamp[3]) {
       nextChamp.pop();
       alert("3개만 쓰시오");
@@ -57,7 +56,7 @@ const MpRight = () => {
         <img
           className="iconimg"
           alt=""
-          src={`https://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/${champ.icon}.png`}
+          src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${champ.icon}.png`}
         />
       </div>
       {champ.name}
