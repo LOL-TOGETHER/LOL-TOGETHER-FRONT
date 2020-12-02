@@ -8,6 +8,7 @@ import SignUp from "../components/pages/SignUp";
 import Login from "../components/pages/Login";
 import DetailPage from "../components/pages/DetailPage";
 import Write from "../components/pages/Write";
+import MyPosts from "../components/pages/MyPosts";
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
       <Route path="/log-in" exact component={Login} />
       <Route path="/detailpage" component={DetailPage} />
       <Route path="/write" exact component={Write} />
+      <Route path="/myposts" exact component={MyPosts} />
     </Switch>
   );
 };

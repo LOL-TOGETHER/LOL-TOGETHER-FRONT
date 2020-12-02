@@ -1,39 +1,23 @@
-import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../css/Table.css";
 import axios from "axios";
-import formatdate from "../Formatdate";
 
-const Board = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://13.209.193.142:7000/board/list").then((response) => {
-      setPosts(response.data);
-    });
-  }, []);
+const MyPosts = () => {
   return (
     <div>
       <div className="table-container">
-        <div className="wrt">
-          <Link to="/myposts">
-            <button>내가 쓴 글</button>
-          </Link>
-          <Link to="/write">
-            <button>글쓰기</button>
-          </Link>
-        </div>
         <table>
           <thead>
             <tr>
               <th>라인</th>
-              <th>작성자</th>
               <th>글제목</th>
               <th>작성시간</th>
+              <th>삭제</th>
             </tr>
           </thead>
           <tbody>
-            {posts.map((post) => {
+            {/* {posts.map((post) => {
               return (
                 <tr>
                   <td className="c0">{post.line}</td>
@@ -48,7 +32,7 @@ const Board = () => {
                   <td className="c3">{formatdate(post.updated_date_time)}</td>
                 </tr>
               );
-            })}
+            })} */}
           </tbody>
         </table>
         <div className="pgntion">PAGINATION HERE</div>
@@ -57,4 +41,4 @@ const Board = () => {
   );
 };
 
-export default Board;
+export default MyPosts;

@@ -6,7 +6,6 @@
   margin-bottom: 100px;
   position: absolute;
   background: url(../../images/img-3.jpg) no-repeat;
-
   object-fit: cover;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -14,7 +13,7 @@
 table {
   font-weight: bold;
   color: white;
-  width: 100%;
+  width: 1000px;
   border-top: 1px solid #444444;
   border-collapse: collapse;
 }
@@ -23,6 +22,7 @@ td {
   border-bottom: 1px solid #eee5e5;
   padding: 10px;
 }
+
 th {
   border-bottom: 3px solid #444444;
   padding: 10px;
@@ -75,4 +75,18 @@ a:hover {
   font-weight: bold;
 
   border-bottom: solid 1px #eee5e5;
+}
+
+.tdtime {
+  border-bottom: solid 1px #eee5e5;
+}
+
+.c1 {
+  width: 200px;
+}
+.c2 {
+  width: 550px;
+}
+.c0 {
+  width: 70px;
 }
