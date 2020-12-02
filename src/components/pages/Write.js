@@ -9,23 +9,23 @@ import sup from "../../images/Position_Diamond-Support.png";
 import { Link } from "react-router-dom";
 
 const Write = () => {
-  const [title, SetTitle] = useState("");
-  const [line, SetLine] = useState("");
-  const [username, SetUsername] = useState("");
-  const [content, SetContent] = useState("");
+  const [title, setTitle] = useState("");
+  const [line, setLine] = useState("");
+  const [username, setUsername] = useState("");
+  const [content, setContent] = useState("");
 
   const HandleTitle = (e) => {
-    SetTitle(e.target.value);
+    setTitle(e.target.value);
   };
 
   const HandleLine = (e) => {
-    SetLine(e.target.value);
+    setLine(e.target.value);
   };
   const HandleUsername = (e) => {
-    SetUsername(e.target.value);
+    setUsername(e.target.value);
   };
   const HandleContent = (e) => {
-    SetContent(e.target.value);
+    setContent(e.target.value);
   };
 
   const ClickWrite = () => {

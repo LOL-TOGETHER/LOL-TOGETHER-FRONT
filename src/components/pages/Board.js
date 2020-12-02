@@ -4,13 +4,13 @@ import "../css/Table.css";
 import axios from "axios";
 
 const Board = () => {
-  const [posts, SetPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:7000/board/list").then((response) => {
       console.log(response.data);
 
-      SetPosts(response.data.data.posts);
+      setPosts(response.data.posts);
     });
   }, []);
   return (
@@ -40,7 +40,7 @@ const Board = () => {
                   </td>
 
                   <td>
-                    <Link to="/detailpage">{post.content}</Link>
+                    <Link to={`/detailpage/${post.id}`}>{post.content}</Link>
                   </td>
 
                   <td>{post.updated_date_time}</td>
