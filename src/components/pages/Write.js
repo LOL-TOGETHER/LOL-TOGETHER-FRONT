@@ -30,13 +30,15 @@ const Write = () => {
 
   const ClickWrite = () => {
     axios
-      .post("http://localhost:7000/board", {
+      .post("http://13.209.193.142:7000/board", {
         title: title,
         line: line,
         content: content,
         userName: username,
       })
-      .then();
+      .then((response) => {
+        alert(response.data.message);
+      });
 
     console.log(title);
   };

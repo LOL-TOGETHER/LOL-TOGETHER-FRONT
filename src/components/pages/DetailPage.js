@@ -3,17 +3,19 @@ import axios from "axios";
 import "../css/DetailPage.css";
 
 const DetailPage = () => {
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState("");
 
   useEffect(() => {
     const postId = window.location.href.split("detailpage/")[1];
 
     axios
-      .get(`http://localhost:7000/board?boardId=${postId}`)
+      .get(`http://13.209.193.142:7000/board?boardId=${postId}`)
       .then((response) => {
-        setPost(response.data);
+        setPost(response.data[0]);
       });
-  });
+  }, []);
+  console.log(post);
+
   return (
     <div>
       <div className="beigeLayer">

@@ -7,10 +7,8 @@ const Board = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:7000/board/list").then((response) => {
-      console.log(response.data);
-
-      setPosts(response.data.posts);
+    axios.get("http://13.209.193.142:7000/board/list").then((response) => {
+      setPosts(response.data);
     });
   }, []);
   return (
