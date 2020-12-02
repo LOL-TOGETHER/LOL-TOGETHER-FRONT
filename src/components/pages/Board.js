@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import posts from "../../static-data/tabledata";
 import "../css/Table.css";
+import axios from "axios";
 
 const Board = () => {
+  const [posts, SetPosts] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:7000/board/list").then((response) => {
+      console.log(response.data);
+
+      SetPosts(response.data.data.posts);
+    });
+  }, []);
   return (
     <div>
       <div className="table-container">
@@ -25,16 +34,16 @@ const Board = () => {
             {posts.map((post) => {
               return (
                 <tr>
-                  <td>{post.tag}</td>
+                  <td>{post.line}</td>
                   <td>
-                    <Link to="/summonerinfo">{post.username}</Link>
+                    <Link to="/summonerinfo">{post.userName}</Link>
                   </td>
 
                   <td>
                     <Link to="/detailpage">{post.content}</Link>
                   </td>
 
-                  <td>{post.updatedTime}</td>
+                  <td>{post.updated_date_time}</td>
                 </tr>
               );
             })}

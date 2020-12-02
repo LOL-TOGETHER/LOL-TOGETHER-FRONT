@@ -1,16 +1,46 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "../css/Write.css";
 import top from "../../images/Position_Diamond-Top.png";
 import jug from "../../images/Position_Diamond-Jungle.png";
 import mid from "../../images/Position_Diamond-Mid.png";
 import bot from "../../images/Position_Diamond-Bot.png";
 import sup from "../../images/Position_Diamond-Support.png";
+import { Link } from "react-router-dom";
 
 const Write = () => {
-  const [selected, SetSelected] = useState("");
-  const HandleSelected = (e) => {
-    SetSelected(e.target.value);
+  const [title, SetTitle] = useState("");
+  const [line, SetLine] = useState("");
+  const [username, SetUsername] = useState("");
+  const [content, SetContent] = useState("");
+
+  const HandleTitle = (e) => {
+    SetTitle(e.target.value);
   };
+
+  const HandleLine = (e) => {
+    SetLine(e.target.value);
+  };
+  const HandleUsername = (e) => {
+    SetUsername(e.target.value);
+  };
+  const HandleContent = (e) => {
+    SetContent(e.target.value);
+  };
+
+  const ClickWrite = () => {
+    axios
+      .post("http://localhost:7000/board", {
+        title: title,
+        line: line,
+        content: content,
+        userName: username,
+      })
+      .then();
+
+    console.log(title);
+  };
+
   return (
     <div>
       <div className="beigeLayer-wr">
@@ -25,6 +55,8 @@ const Write = () => {
                   <input
                     className="titleinput"
                     placeholder="제목을 입력하세요"
+                    value={title}
+                    onChange={HandleTitle}
                   />
                 </div>
               </div>
@@ -35,8 +67,8 @@ const Write = () => {
                     <input
                       type="radio"
                       value="top"
-                      onClick={HandleSelected}
-                      checked={selected === "top"}
+                      onClick={HandleLine}
+                      checked={line === "top"}
                     />
                     탑
                     <img className="writeicon" src={top} alt="" />
@@ -47,8 +79,8 @@ const Write = () => {
                     <input
                       type="radio"
                       value="jug"
-                      onClick={HandleSelected}
-                      checked={selected === "jug"}
+                      onClick={HandleLine}
+                      checked={line === "jug"}
                     />
                     정글
                     <img className="writeicon" src={jug} alt="" />
@@ -59,8 +91,8 @@ const Write = () => {
                     <input
                       type="radio"
                       value="mid"
-                      onClick={HandleSelected}
-                      checked={selected === "mid"}
+                      onClick={HandleLine}
+                      checked={line === "mid"}
                     />
                     미드
                     <img className="writeicon" src={mid} alt="" />
@@ -71,8 +103,8 @@ const Write = () => {
                     <input
                       type="radio"
                       value="bot"
-                      onClick={HandleSelected}
-                      checked={selected === "bot"}
+                      onClick={HandleLine}
+                      checked={line === "bot"}
                     />
                     원딜
                     <img className="writeicon" src={bot} alt="" />
@@ -83,8 +115,8 @@ const Write = () => {
                     <input
                       type="radio"
                       value="sup"
-                      onClick={HandleSelected}
-                      checked={selected === "sup"}
+                      onClick={HandleLine}
+                      checked={line === "sup"}
                     />
                     서폿
                     <img className="writeicon" src={sup} alt="" />
@@ -94,13 +126,28 @@ const Write = () => {
             </div>
             <div className="content-dt-wr">
               <h3 className="content-h3">내용:</h3>
-              <textarea className="wr-textarea">
+              <textarea
+                value={content}
+                onChange={HandleContent}
+                className="wr-textarea"
+              >
                 자주하는 챔피언, 구하고자 하는 라이너, 자신의 롤 성향 등등
                 입력하세요 ~
               </textarea>
             </div>
             <div className="wr-button">
-              <button type="submit">작성</button>
+              <Link to="/board">
+                <button type="submit" onClick={ClickWrite}>
+                  작성
+                </button>
+              </Link>
+              <br />
+              작성자(로그인구현시지울거야):
+              <input
+                value={username}
+                onChange={HandleUsername}
+                placeholder="작성자 닉네임 입력"
+              />
             </div>
           </div>
         </div>
