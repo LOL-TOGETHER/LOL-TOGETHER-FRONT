@@ -38,7 +38,7 @@ const Board = () => {
                   </td>
 
                   <td>
-                    <Link to={`/detailpage/${post.id}`}>{post.content}</Link>
+                    <Link to={`/detailpage/${post.id}`}>{post.title}</Link>
                   </td>
 
                   <td>{post.updated_date_time}</td>
