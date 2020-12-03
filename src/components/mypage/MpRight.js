@@ -30,7 +30,6 @@ const MpRight = () => {
         champdatainfo = champData.data[i].key;
       }
     }
-
     const nextChamp = champ.concat({
       id: nextId,
       name: input,
