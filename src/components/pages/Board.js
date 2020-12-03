@@ -3,9 +3,19 @@ import { Link } from "react-router-dom";
 import "../css/Table.css";
 import axios from "axios";
 import formatdate from "../Formatdate";
+import Pagination from "../Pagination";
 
 const Board = () => {
   const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(12);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   useEffect(() => {
     axios.get("http://13.209.193.142:7000/board/list").then((response) => {
@@ -34,7 +44,7 @@ const Board = () => {
             </tr>
           </thead>
           <tbody>
-            {posts
+            {currentPosts
               .slice(0)
               .reverse()
               .map((post) => {
@@ -55,7 +65,13 @@ const Board = () => {
               })}
           </tbody>
         </table>
-        <div className="pgntion">PAGINATION HERE</div>
+        <div className="pgntion">
+          <Pagination
+            postPerPage={postsPerPage}
+            totalPosts={posts.length}
+            paginate={paginate}
+          />
+        </div>
       </div>
     </div>
   );

@@ -90,3 +90,14 @@ a:hover {
 .c0 {
   width: 70px;
 }
+.pagebutton {
+  border: 1px solid white;
+  color: white;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: transparent;
+}
+.pageli {
+  float: left;
+  margin-left: 10px;
+}
