@@ -6,7 +6,19 @@
   margin-bottom: 100px;
   position: absolute;
   background: url(../../images/img-3.jpg) no-repeat;
-  object-fit: cover;
+  background-size: cover;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.table-container2 {
+  width: 1000px;
+  display: grid;
+  left: 17%;
+  top: 15%;
+  margin-bottom: 100px;
+  position: absolute;
+  background: url(../../images/firefestival.png) no-repeat;
+  background-size: cover;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -100,4 +112,20 @@ a:hover {
 .pageli {
   float: left;
   margin-left: 10px;
+}
+
+.mypostbtn {
+  border: 1px solid white;
+  color: white;
+  padding-left: 44px;
+  padding-right: 44px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: large;
+  font-weight: bold;
+  background-color: transparent;
+}
+.mypostbtn:hover {
+  color: black;
+  background-color: white;
 }

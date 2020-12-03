@@ -22,7 +22,7 @@ const MyPosts = () => {
   };
   return (
     <div>
-      <div className="table-container">
+      <div className="table-container2">
         <table>
           <thead>
             <tr>
@@ -44,7 +44,12 @@ const MyPosts = () => {
                   </td>
 
                   <td className="c3">
-                    <button onClick={() => onClickDelete(post.id)}>삭제</button>
+                    <button
+                      className="mypostbtn"
+                      onClick={() => onClickDelete(post.id)}
+                    >
+                      삭제
+                    </button>
                   </td>
                 </tr>
               );
