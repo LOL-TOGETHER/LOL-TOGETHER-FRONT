@@ -1,24 +1,40 @@
 import React from "react";
 import "../css/MyPage.css";
-import Nami from "../../images/lolicon.jpg";
+import cameraicon from "../../images/camera.png";
 
-const MpLeft = ({ onClickSave }) => {
+const MpLeft = ({
+  profileUrl,
+  onChangeProfileUrl,
+  onClickSave,
+  onClickProfileUpload,
+}) => {
   return (
     <div className="mp-container-left">
       <div className="mp-profile">
         <h1>프로필사진</h1>
         <div className="box-profile">
-          <img className="profile-img" src={Nami} alt="cat" />
+          <img alt="d" className="profile-img" src={profileUrl} />
+          <input
+            type="file"
+            accept="image/jpeg, image/jpg, image/png"
+            className="profile-img"
+            onChange={onChangeProfileUrl}
+          />
         </div>
+        <button className="uploadbtn" onClick={onClickProfileUpload}>
+          <img className="uploadbtn-img" src={cameraicon}></img>
+        </button>
       </div>
 
       <div className="myleft-nickname-container">
         <h1>닉네임</h1>
       </div>
       <div className="savechangebtn-container">
-        <button className="myleft-button" onClick={onClickSave}>
-          변경 내용 저장
-        </button>
+        <label>
+          <button className="myleft-button" onClick={onClickSave}>
+            변경 내용 저장
+          </button>
+        </label>
       </div>
     </div>
   );

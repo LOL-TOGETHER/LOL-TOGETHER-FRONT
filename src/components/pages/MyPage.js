@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import champData from "../../static-data/champ-static-data.json";
 import MpLeft from "../mypage/MpLeft";
 import MpRight from "../mypage/MpRight";
-import nami from "../../images/lolicon.png";
 import axios from "axios";
-
+import Nami from "../../images/lolicon.jpg";
 import "../css/MyPage.css";
 
 const MyPage = () => {
-  const [profileUrl, setProfileUrl] = useState(nami);
+  const [profileUrl, setProfileUrl] = useState(Nami);
   const [input, setInput] = useState("");
   const [champ, setChamp] = useState([]);
   const [nextId, setNextId] = useState(0);
@@ -65,6 +64,12 @@ const MyPage = () => {
     setProfileUrl(e.target.files[0]);
   };
 
+  const onClickProfileUpload = (e) => {
+    const formData = new FormData();
+    formData.append("file", profileUrl);
+    axios.post("ServerURl", formData);
+  };
+
   const onClickSave = () => {
     axios
       .post("ServerUrl", {
@@ -78,6 +83,7 @@ const MyPage = () => {
   return (
     <div className="mp-container">
       <MpLeft
+        onClickProfileUpload={onClickProfileUpload}
         profileUrl={profileUrl}
         onClickSave={onClickSave}
         onChangeProfileUrl={onChangeProfileUrl}

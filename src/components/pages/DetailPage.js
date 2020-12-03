@@ -25,10 +25,12 @@ const DetailPage = () => {
       .then(() => {
         setComments(comments.filter((comment) => comment.id !== commentId));
         console.log(commentId);
-      });
+      })
+      .catch((error) => alert(error));
   };
 
   useEffect(() => {
+    const postId = window.location.href.split("detailpage/")[1];
     axios
       .get(`http://13.209.193.142:7000/board?boardId=${postId}`)
       .then((response) => {
