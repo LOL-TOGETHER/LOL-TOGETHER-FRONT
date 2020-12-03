@@ -2,7 +2,7 @@ import React from "react";
 import "../css/MyPage.css";
 import Nami from "../../images/lolicon.jpg";
 
-const MpLeft = () => {
+const MpLeft = ({ onClickSave }) => {
   return (
     <div className="mp-container-left">
       <div className="mp-profile">
@@ -12,8 +12,13 @@ const MpLeft = () => {
         </div>
       </div>
 
-      <div>
+      <div className="myleft-nickname-container">
         <h1>닉네임</h1>
+      </div>
+      <div className="savechangebtn-container">
+        <button className="myleft-button" onClick={onClickSave}>
+          변경 내용 저장
+        </button>
       </div>
     </div>
   );

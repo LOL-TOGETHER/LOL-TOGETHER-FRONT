@@ -15,7 +15,7 @@ const Board = () => {
 
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   useEffect(() => {
     axios.get("http://13.209.193.142:7000/board/list").then((response) => {

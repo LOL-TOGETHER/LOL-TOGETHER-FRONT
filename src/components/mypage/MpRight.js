@@ -7,59 +7,16 @@ import MID from "../../images/mid.PNG";
 import BOT from "../../images/bot.PNG";
 import SUP from "../../images/sup.PNG";
 
-const MpRight = () => {
-  const [input, setInput] = useState("");
-  const [champ, setChamp] = useState([]);
-  const [nextId, setNextId] = useState(0);
-  const [buttonState, setButtonState] = useState("");
-
-  const onClickLine = (e) => {
-    setButtonState(e.target.name);
-  };
-
-  const handleInput = (e) => {
-    setInput(e.target.value);
-  };
-
-  const OnClickButton = (e) => {
-    e.preventDefault();
-    let champdatainfo;
-
-    for (let i in champData.data) {
-      if (champData.data[i].name === input) {
-        champdatainfo = champData.data[i].key;
-      }
-    }
-    const nextChamp = champ.concat({
-      id: nextId,
-      name: input,
-      engname: champdatainfo,
-    });
-
-    if (nextChamp[3]) {
-      nextChamp.pop();
-      alert("3개만 쓰시오");
-    }
-
-    setNextId(nextId + 1);
-    setChamp(nextChamp);
-
-    setInput("");
-  };
-
-  const champList = champ.map((champ) => (
-    <li key={champ.id}>
-      <div>
-        <img
-          className="iconimg"
-          alt=""
-          src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${champ.engname}.png`}
-        />
-      </div>
-      {champ.name}
-    </li>
-  ));
-
+const MpRight = ({
+  input,
+  champ,
+  champList,
+  nextId,
+  buttonState,
+  OnClickButton,
+  handleInput,
+  onClickLine,
+}) => {
   return (
     <div className="mp-container-right">
       <div className="favchamp-info">

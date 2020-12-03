@@ -4,23 +4,55 @@ import "../css/DetailPage.css";
 
 const DetailPage = () => {
   const [post, setPost] = useState("");
-  const [comments, setComments] = useState("");
+  const [inputComment, setInputComment] = useState("");
+  const [comments, setComments] = useState([]);
   const [commentuser, setCommentuser] = useState("");
 
+  const postId = window.location.href.split("detailpage/")[1];
+
   const handleCommentContent = (e) => {
-    setComments(e.target.value);
+    setInputComment(e.target.value);
   };
   const handleCommentuser = (e) => {
     setCommentuser(e.target.value);
   };
 
   const deleteComment = (commentId) => {
-    axios.delete(
-      `http://localhost:7000/board/comment?board_Id=${postId}&id=${commentId}`
-    );
+    axios
+      .delete(
+        `http://13.209.193.142:7000/board/comment?board_Id=${postId}&id=${commentId}`
+      )
+      .then(() => {
+        setComments(comments.filter((comment) => comment.id !== commentId));
+        console.log(commentId);
+      });
   };
 
-  const commentlist = comments.localeCompare((comment) => {
+  useEffect(() => {
+    axios
+      .get(`http://13.209.193.142:7000/board?boardId=${postId}`)
+      .then((response) => {
+        setPost(response.data[0]);
+      });
+
+    axios
+      .get(`http://13.209.193.142:7000/board/comment?boardId=${postId}`)
+      .then((response) => {
+        setComments(response.data);
+        console.log(response.data);
+      });
+  }, []);
+
+  const onClickComment = () => {
+    axios
+      .post(`http://13.209.193.142:7000/board/comment?boardId=${postId}`, {
+        userName: commentuser,
+        content: inputComment,
+      })
+      .then(() => window.location.reload());
+  };
+
+  const commentlist = comments.map((comment) => (
     <li key={comment.id}>
       <div>
         {comment.userName}:{comment.content}
@@ -33,29 +65,8 @@ const DetailPage = () => {
       >
         x
       </button>
-    </li>;
-  });
-
-  const postId = window.location.href.split("detailpage/")[1];
-  useEffect(() => {
-    const postId = window.location.href.split("detailpage/")[1];
-
-    axios
-      .get(`http://13.209.193.142:7000/board?boardId=${postId}`)
-      .then((response) => {
-        setPost(response.data[0]);
-      });
-  }, []);
-  console.log(post);
-
-  const onClickComment = () => {
-    axios
-      .post(`http://localhost:7000/board/comment?boardId=${postId}`, {
-        userName: commentuser,
-        content: comments,
-      })
-      .then((response) => alert(response.message));
-  };
+    </li>
+  ));
 
   return (
     <div>
@@ -81,7 +92,7 @@ const DetailPage = () => {
                 <textarea
                   rows="3"
                   maxLength="100"
-                  value={comments}
+                  value={inputComment}
                   onChange={handleCommentContent}
                   placeholder="댓글을 입력하시오."
                 />

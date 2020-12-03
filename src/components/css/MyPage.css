@@ -16,7 +16,8 @@
     rgb(184, 171, 219) 0%,
     rgb(55, 105, 103) 100%
   );
-
+  display: grid;
+  grid-template-rows: 300px 100px 200px;
   border-radius: 10px 0 0 10px;
 }
 
@@ -27,6 +28,10 @@
 }
 
 .mp-profile {
+}
+.myleft-nickname-container {
+}
+.savechangebtn-container {
 }
 
 .box-profile {
@@ -161,4 +166,23 @@
   color: white;
   margin-left: 260px;
   margin-top: 20px;
+}
+
+.myleft-button {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding-left: 44px;
+  padding-right: 44px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: xx-large;
+  font-weight: bold;
+
+  margin-top: 50px;
+  margin-left: 25px;
+}
+.myleft-button:hover {
+  color: black;
+  background-color: rgb(255, 255, 255);
 }
