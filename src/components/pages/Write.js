@@ -36,8 +36,9 @@ const Write = () => {
         content: content,
         userName: username,
       })
-      .then((response) => {
-        alert(response.data.message);
+      .then(() => {
+        alert("작성완료!");
+        window.location.reload();
       });
 
     console.log(title);
