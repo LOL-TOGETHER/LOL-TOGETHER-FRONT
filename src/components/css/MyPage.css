@@ -139,6 +139,8 @@
   vertical-align: middle;
   margin-right: 10px;
   margin-left: 15px;
+  box-shadow: 5px 2px 8px 0px rgba(255, 255, 255, 0.2),
+    5px 1px 20px 5px rgba(255, 255, 255, 0.25);
 }
 .preferline button:hover {
   border: none;
@@ -152,6 +154,8 @@
   transform: scale(1);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  box-shadow: 5px 2px 8px 0px rgba(255, 255, 255, 0.2),
+    5px 1px 20px 5px rgba(255, 255, 255, 0.25);
 }
 
 .img-line:hover {
@@ -161,6 +165,8 @@
 .img-line-reply {
   margin-top: 40px;
   margin-left: 270px;
+  box-shadow: 5px 2px 8px 0px rgba(255, 255, 255, 0.2),
+    5px 1px 20px 5px rgba(255, 255, 255, 0.25);
 }
 .preferline h3 {
   color: white;

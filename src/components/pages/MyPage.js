@@ -12,7 +12,6 @@ const MyPage = () => {
   const [champ, setChamp] = useState([]);
   const [nextId, setNextId] = useState(0);
   const [username, setUsername] = useState("");
-
   const [buttonState, setButtonState] = useState("");
 
   const onClickLine = (e) => {
@@ -79,7 +78,9 @@ const MyPage = () => {
   const onClickSave = () => {
     axios
       .post("ServerUrl", {
-        favchamp: champ,
+        champ1: champ[0].engname,
+        champ2: champ[1].engname,
+        champ3: champ[2].engname,
         line: buttonState,
         userName: username,
         profileUrl: profileUrl,

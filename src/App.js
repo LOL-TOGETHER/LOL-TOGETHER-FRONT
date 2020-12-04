@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import "./App.css";
+import axios from "axios";
 import Routes from "./routes/index";
 
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import Home from "./components/pages/Home";
-// import Services from "./components/pages/Services";
-// import MyPage from "./components/pages/MyPage";
-// import Board from "./components/pages/Board";
-// import SignUp from "./components/pages/SignUp";
-// import Login from "./components/pages/Login";
-
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  //해야할 것:
+  //토큰 받아서 토큰유무에따라 isloggedin true or false
+  //isloggedin의 true/false 유무에 따라 navbar 요소 바꾸기
+
+  useEffect(() => {
+    axios.get("serverurl").then(() => {});
+  });
+
   return (
     <>
       <Navbar />

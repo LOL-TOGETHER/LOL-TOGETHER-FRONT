@@ -159,3 +159,7 @@ body {
   color: #ffcd27;
   font-weight: 600;
 }
+
+.form-content-right p {
+  color: red;
+}
