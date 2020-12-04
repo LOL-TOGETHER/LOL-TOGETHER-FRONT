@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-const LoginForm = () => {
+const LoginForm = ({ isloggedin, setIsLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -12,18 +12,21 @@ const LoginForm = () => {
   const HandlePassword = (e) => {
     setPassword(e.target.value);
   };
-  const onClickLogIn = () => {
+  const onClickLogIn = (e) => {
+    e.preventDefault();
     axios
-      .post(`http://13.209.193.142:7000/signup`, {
+      .post("http://13.209.193.142:7000/signup/check", {
         email: email,
         password: password,
       })
       .then((response) => {
         localStorage.setItem("token", response.data);
-        history.push("/board");
+        window.location.replace("/board");
+        setIsLoggedIn(true);
       })
+
       .catch((error) => {
-        alert(error.response.data.message);
+        alert(error.response);
       });
   };
 

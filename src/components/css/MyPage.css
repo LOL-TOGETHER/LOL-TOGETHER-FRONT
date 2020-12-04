@@ -202,13 +202,18 @@
   margin-left: 150px;
   margin-top: 4px;
   font-size: 20px;
-  border: 1px solid white;
+  border: transparent;
   border-radius: 50%;
-  background-color: white;
+  background-color: transparent;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.1s ease-in-out;
 }
 .uploadbtn:hover {
-  border: 1px solid rgb(212, 212, 212);
-  background-color: rgb(212, 212, 212);
+  border: transparent;
+  background-color: transparent;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 .mp-left-input {
   display: inline-block;

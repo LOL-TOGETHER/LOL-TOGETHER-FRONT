@@ -28,14 +28,14 @@ const SignupFunctions = (validate) => {
       return;
     }
     try {
-      await axios.post("serverurl", {
+      await axios.post("http://13.209.193.142:7000/signup", {
         email: values.email,
         name: values.username,
         password: values.password,
       });
-      history.push("/login");
+      history.push("/log-in");
     } catch (error) {
-      alert(error.response.data.message);
+      alert(error.response.message);
     }
   };
 

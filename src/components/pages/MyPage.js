@@ -72,21 +72,21 @@ const MyPage = () => {
   const onClickProfileUpload = (e) => {
     const formData = new FormData();
     formData.append("file", profileUrl);
-    axios.post("ServerURl", formData);
+    // axios.post("ServerURl", formData);
   };
 
   const onClickSave = () => {
-    axios
-      .post("ServerUrl", {
-        champ1: champ[0].engname,
-        champ2: champ[1].engname,
-        champ3: champ[2].engname,
-        line: buttonState,
-        userName: username,
-        profileUrl: profileUrl,
-      })
-      .then(() => {})
-      .catch((error) => alert(error));
+    // axios
+    //   .post("ServerUrl", {
+    //     champ1: champ[0].engname,
+    //     champ2: champ[1].engname,
+    //     champ3: champ[2].engname,
+    //     line: buttonState,
+    //     userName: username,
+    //     profileUrl: profileUrl,
+    //   })
+    //   .then(() => {})
+    //   .catch((error) => alert(error));
   };
 
   return (

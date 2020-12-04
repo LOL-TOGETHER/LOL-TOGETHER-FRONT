@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./css/Navbar.css";
 import Button from "./Button";
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -12,6 +12,11 @@ const Navbar = () => {
   };
   const closeMobileMenu = () => {
     setClick(false);
+  };
+  const onClickLogOut = () => {
+    setClick(false);
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
   };
 
   const showButton = () => {
@@ -23,8 +28,12 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(token);
+    }
     showButton();
-  }, []);
+  }, [setIsLoggedIn]);
 
   window.addEventListener("resize", showButton);
 
@@ -44,22 +53,59 @@ const Navbar = () => {
                 홈
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/mypage"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                마이페이지
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link to="/board" className="nav-links" onClick={closeMobileMenu}>
-                게시판
-              </Link>
-            </li>
-            <li className="nav-item">
+            {isLoggedIn ? (
+              <li className="nav-item">
+                <Link
+                  to="/mypage"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  마이페이지
+                </Link>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link
+                  to="/sign-up"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  회원가입
+                </Link>
+              </li>
+            )}
+            {isLoggedIn ? (
+              <li className="nav-item">
+                <Link
+                  to="/board"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  게시판
+                </Link>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link
+                  to="/Services"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  서비스
+                </Link>
+              </li>
+            )}
+            {isLoggedIn ? (
+              <li className="nav-item">
+                <Link
+                  to="/log-in"
+                  className="nav-links-mobile"
+                  onClick={onClickLogOut}
+                >
+                  로그아웃
+                </Link>
+              </li>
+            ) : (
               <Link
                 to="/log-in"
                 className="nav-links-mobile"
@@ -67,11 +113,21 @@ const Navbar = () => {
               >
                 로그인
               </Link>
-            </li>
+            )}
           </ul>
-          <Link to="/log-in" className="btn-mobile">
-            {button && <Button buttonStyle="btn--outline">로그인</Button>}
-          </Link>
+          {isLoggedIn ? (
+            <Link to="/log-in" className="btn-mobile">
+              {button && (
+                <Button onClick={onClickLogOut} buttonStyle="btn--outline">
+                  로그아웃
+                </Button>
+              )}
+            </Link>
+          ) : (
+            <Link to="/log-in" className="btn-mobile">
+              {button && <Button buttonStyle="btn--outline">로그인</Button>}
+            </Link>
+          )}
         </div>
       </nav>
     </>
