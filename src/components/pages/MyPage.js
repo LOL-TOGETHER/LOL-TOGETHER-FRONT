@@ -85,7 +85,8 @@ const MyPage = () => {
         userName: username,
         profileUrl: profileUrl,
       })
-      .then(() => {});
+      .then(() => {})
+      .catch((error) => alert(error));
   };
 
   return (

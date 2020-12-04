@@ -102,13 +102,26 @@ a:hover {
 .c0 {
   width: 70px;
 }
+.paginationcont {
+  display: flex;
+  justify-content: center;
+}
 .pagebutton {
   border: 1px solid white;
   color: white;
   padding-left: 4px;
   padding-right: 4px;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+.pagebutton:hover {
+  background-color: white;
+  color: purple;
+}
+
 .pageli {
   float: left;
   margin-left: 10px;

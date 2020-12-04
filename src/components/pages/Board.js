@@ -9,11 +9,12 @@ const Board = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
+  const reversePosts = posts.slice(0).reverse();
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
 
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = reversePosts.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -44,25 +45,22 @@ const Board = () => {
             </tr>
           </thead>
           <tbody>
-            {currentPosts
-              .slice(0)
-              .reverse()
-              .map((post) => {
-                return (
-                  <tr>
-                    <td className="c0">{post.line}</td>
-                    <td className="c1">
-                      <Link to="/readmypage">{post.userName}</Link>
-                    </td>
+            {currentPosts.map((post) => {
+              return (
+                <tr>
+                  <td className="c0">{post.line}</td>
+                  <td className="c1">
+                    <Link to="/readmypage">{post.userName}</Link>
+                  </td>
 
-                    <td className="c2">
-                      <Link to={`/detailpage/${post.id}`}>{post.title}</Link>
-                    </td>
+                  <td className="c2">
+                    <Link to={`/detailpage/${post.id}`}>{post.title}</Link>
+                  </td>
 
-                    <td className="c3">{formatdate(post.updated_date_time)}</td>
-                  </tr>
-                );
-              })}
+                  <td className="c3">{formatdate(post.updated_date_time)}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
         <div className="pgntion">
