@@ -52,7 +52,7 @@ const Board = () => {
                   <tr>
                     <td className="c0">{post.line}</td>
                     <td className="c1">
-                      <Link to="/summonerinfo">{post.userName}</Link>
+                      <Link to="/readmypage">{post.userName}</Link>
                     </td>
 
                     <td className="c2">

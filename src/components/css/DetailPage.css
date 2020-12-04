@@ -71,3 +71,32 @@ ul {
   margin-left: 50px;
   list-style: none;
 }
+
+/*combox*/
+.comment-mapli {
+  display: flex;
+  flex-direction: column;
+  border-bottom: gray solid 1px;
+  width: 570px;
+}
+
+.com-username {
+  font-weight: bold;
+}
+.com-content {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.com-time-delete {
+  font-size: 8px;
+  color: rgb(128, 128, 128);
+}
+.com-delete-btn {
+  border: none;
+  float: right;
+  background-color: transparent;
+  color: white;
+}
+.com-delete-btn:hover {
+  color: rgb(199, 199, 199);
+}

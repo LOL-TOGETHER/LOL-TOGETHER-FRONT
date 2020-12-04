@@ -1,0 +1,129 @@
+.rmp-container {
+  margin: 90px auto;
+  width: 800px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  height: 350px;
+  display: grid;
+  grid-template-columns: 250px 550px;
+}
+
+.rmp-container-left {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    90deg,
+    rgb(184, 171, 219) 0%,
+    rgb(55, 105, 103) 100%
+  );
+  border-radius: 10px 0 0 10px;
+  text-align: center;
+}
+
+.rmp-left-cont1 {
+  height: 220px;
+}
+.rmp-left-img {
+  margin-left: 1px;
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 30%;
+  overflow: hidden;
+  background: #e19eee;
+}
+.rmp-left-cont2 {
+  height: 70px;
+  padding-top: 15px;
+}
+
+.rmp-left-atag {
+  font-size: 20px;
+}
+
+/*============right-================*/
+
+.rmp-container-right {
+  background: linear-gradient(90deg, rgb(50, 50, 50) 0%, rgb(48, 48, 48) 100%);
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+  width: 550px;
+}
+
+.rmp-right-cont1 {
+  display: flex;
+  height: 350px;
+  width: 275px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.rmp-container-right h1 {
+  text-align: center;
+  color: white;
+}
+.rmp-right-line-img {
+  margin-left: 38px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  box-shadow: 5px 2px 8px 0px rgba(255, 255, 255, 0.2),
+    5px 1px 20px 5px rgba(255, 255, 255, 0.5);
+  margin-bottom: 30px;
+}
+.rmp-right-cont2 {
+  width: 275px;
+  height: 310px;
+  margin-top: 20px;
+}
+
+.rpm-right-cont2-1 {
+  height: 50px;
+}
+
+.rpm-right-cont2-2 {
+  height: 210px;
+  width: 230px;
+  margin-top: 22px;
+  margin-left: 22px;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.rmp-right-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.rpm-right-cont2-2 ul li {
+  list-style: none;
+}
+
+.rmp-right-li {
+  width: 230px;
+  height: 50px;
+}
+
+.li-rpm {
+  width: 230px;
+  height: 50px;
+  display: flex;
+  box-shadow: 5px 2px 8px 0px rgba(255, 255, 255, 0.2),
+    5px 1px 20px 5px rgba(255, 255, 255, 0.25);
+  flex-direction: row;
+}
+
+.li-rpm-1 {
+  width: 55px;
+}
+.li-rpm-2 {
+  width: 175px;
+  margin-top: 10px;
+  text-align: center;
+}

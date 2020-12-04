@@ -9,6 +9,7 @@ import Login from "../components/pages/Login";
 import DetailPage from "../components/pages/DetailPage";
 import Write from "../components/pages/Write";
 import MyPosts from "../components/pages/MyPosts";
+import ReadMyPage from "../components/pages/ReadMyPage";
 
 const Routes = () => {
   return (
@@ -22,6 +23,7 @@ const Routes = () => {
       <Route path="/detailpage" component={DetailPage} />
       <Route path="/write" exact component={Write} />
       <Route path="/myposts" exact component={MyPosts} />
+      <Route path="/readmypage" exact component={ReadMyPage} />
     </Switch>
   );
 };

@@ -22,7 +22,7 @@ const MpLeft = ({
           />
         </div>
         <button className="uploadbtn" onClick={onClickProfileUpload}>
-          <img className="uploadbtn-img" src={cameraicon}></img>
+          <img className="uploadbtn-img" src={cameraicon} alt=""></img>
         </button>
       </div>
 

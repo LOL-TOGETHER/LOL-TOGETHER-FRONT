@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/DetailPage.css";
+import formatDate from "../Formatdate";
 
 const DetailPage = () => {
   const [post, setPost] = useState("");
@@ -56,17 +57,22 @@ const DetailPage = () => {
 
   const commentlist = comments.map((comment) => (
     <li key={comment.id}>
-      <div>
-        {comment.userName}:{comment.content}
+      <div className="comment-mapli">
+        <div className="com-username"> {comment.userName}</div>
+        <div className="com-content">{comment.content}</div>
+        <div className="com-time-delete">
+          {formatDate(comment.updated_data_time)}
+          <button
+            className="com-delete-btn"
+            type="button"
+            onClick={() => {
+              deleteComment(comment.id);
+            }}
+          >
+            삭제
+          </button>
+        </div>
       </div>
-      <button
-        type="button"
-        onClick={() => {
-          deleteComment(comment.id);
-        }}
-      >
-        x
-      </button>
     </li>
   ));
 
