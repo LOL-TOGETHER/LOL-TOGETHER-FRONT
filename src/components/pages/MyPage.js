@@ -11,6 +11,8 @@ const MyPage = () => {
   const [input, setInput] = useState("");
   const [champ, setChamp] = useState([]);
   const [nextId, setNextId] = useState(0);
+  const [username, setUsername] = useState("");
+
   const [buttonState, setButtonState] = useState("");
 
   const onClickLine = (e) => {
@@ -60,6 +62,10 @@ const MyPage = () => {
     </li>
   ));
 
+  const onChangeUsername = (e) => {
+    setUsername(e.target.value);
+  };
+
   const onChangeProfileUrl = (e) => {
     setProfileUrl(e.target.files[0]);
   };
@@ -75,6 +81,7 @@ const MyPage = () => {
       .post("ServerUrl", {
         favchamp: champ,
         line: buttonState,
+        userName: username,
         profileUrl: profileUrl,
       })
       .then(() => {});
@@ -83,6 +90,8 @@ const MyPage = () => {
   return (
     <div className="mp-container">
       <MpLeft
+        onChangeUsername={onChangeUsername}
+        username={username}
         onClickProfileUpload={onClickProfileUpload}
         profileUrl={profileUrl}
         onClickSave={onClickSave}

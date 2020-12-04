@@ -3,6 +3,9 @@ import "../css/MyPage.css";
 import cameraicon from "../../images/camera.png";
 
 const MpLeft = ({
+  username,
+  userinput,
+  onChangeUsername,
   profileUrl,
   onChangeProfileUrl,
   onClickSave,
@@ -27,7 +30,13 @@ const MpLeft = ({
       </div>
 
       <div className="myleft-nickname-container">
-        <h1>닉네임</h1>
+        <h1>{username}</h1>
+        <input
+          value={username}
+          onChange={onChangeUsername}
+          className="mp-left-input"
+          placeholder="롤 닉네임 입력"
+        />
       </div>
       <div className="savechangebtn-container">
         <label>

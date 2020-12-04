@@ -178,7 +178,6 @@
   padding-bottom: 5px;
   font-size: xx-large;
   font-weight: bold;
-
   margin-top: 50px;
   margin-left: 25px;
 }
@@ -205,3 +204,30 @@
   border: 1px solid rgb(212, 212, 212);
   background-color: rgb(212, 212, 212);
 }
+.mp-left-input {
+  display: inline-block;
+  margin-left: 50px;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 70%;
+  border: none;
+}
+
+/* .mp-left-btn {
+  margin-left: 4px;
+  width: 20%;
+  height: 40px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(175, 217, 252, 0.774) 0%,
+    rgb(77, 200, 231) 100%
+  );
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 10%;
+} */
