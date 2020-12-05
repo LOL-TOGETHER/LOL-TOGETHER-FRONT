@@ -29,6 +29,7 @@ const DetailPage = () => {
       })
       .catch((error) => alert(error));
   };
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const postId = window.location.href.split("detailpage/")[1];
@@ -44,14 +45,24 @@ const DetailPage = () => {
         setComments(response.data);
         console.log(response.data);
       });
+    console.log(post);
   }, []);
 
   const onClickComment = () => {
     axios
-      .post(`http://13.209.193.142:7000/board/comment?boardId=${postId}`, {
-        userName: commentuser,
-        content: inputComment,
-      })
+      .post(
+        `http://13.209.193.142:7000/board/comment?boardId=${postId}`,
+        {
+          userName: commentuser,
+          content: inputComment,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then(() => window.location.reload());
   };
 

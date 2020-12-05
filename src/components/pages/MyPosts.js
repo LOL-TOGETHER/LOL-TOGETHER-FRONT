@@ -6,16 +6,28 @@ import formatdate from "../Formatdate";
 const MyPosts = () => {
   const [MyPosts, setMyPosts] = useState([]);
   const [isChanged, setIsChanged] = useState(false);
-
+  const token = localStorage.getItem("token");
   useEffect(() => {
-    axios.get("http://13.209.193.142:7000/board/list").then((response) => {
-      setMyPosts(response.data);
-    });
+    axios
+      .get("http://13.209.193.142:7000/board/list", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        setMyPosts(response.data);
+      });
   }, [isChanged]);
 
   const onClickDelete = (mypostId) => {
     axios
-      .delete(`http://13.209.193.142:7000/board?boardId=${mypostId}`)
+      .delete(`http://13.209.193.142:7000/board?boardId=${mypostId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
       .then(() =>
         setMyPosts(MyPosts.filter((mypost) => mypost.id !== mypostId))
       );

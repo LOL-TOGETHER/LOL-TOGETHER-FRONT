@@ -13,6 +13,12 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const closeMobileMenu = () => {
     setClick(false);
   };
+
+  const onClickBoard = () => {
+    setClick(false);
+    !isLoggedIn ? alert("로그인 후 이용 가능한 서비스입니다!") : <></>;
+  };
+
   const onClickLogOut = () => {
     setClick(false);
     localStorage.removeItem("token");
@@ -86,12 +92,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
               </li>
             ) : (
               <li className="nav-item">
-                <Link
-                  to="/Services"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  서비스
+                <Link to="/log-in" className="nav-links" onClick={onClickBoard}>
+                  게시판
                 </Link>
               </li>
             )}

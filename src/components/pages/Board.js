@@ -19,9 +19,18 @@ const Board = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   useEffect(() => {
-    axios.get("http://13.209.193.142:7000/board/list").then((response) => {
-      setPosts(response.data);
-    });
+    const token = localStorage.getItem("token");
+    axios
+      .get("http://13.209.193.142:7000/board/list", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        setPosts(response.data);
+      });
+    console.log(posts);
   }, []);
 
   return (

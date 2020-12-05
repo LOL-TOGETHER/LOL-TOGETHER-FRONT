@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 const Write = () => {
   const [title, setTitle] = useState("");
   const [line, setLine] = useState("");
-  const [username, setUsername] = useState("");
   const [content, setContent] = useState("");
 
+  const token = localStorage.getItem("token");
   const HandleTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -21,21 +21,27 @@ const Write = () => {
   const HandleLine = (e) => {
     setLine(e.target.value);
   };
-  const HandleUsername = (e) => {
-    setUsername(e.target.value);
-  };
+
   const HandleContent = (e) => {
     setContent(e.target.value);
   };
 
   const ClickWrite = () => {
     axios
-      .post("http://13.209.193.142:7000/board", {
-        title: title,
-        line: line,
-        content: content,
-        userName: username,
-      })
+      .post(
+        "http://13.209.193.142:7000/board",
+        {
+          title: title,
+          line: line,
+          content: content,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then(() => {
         alert("작성완료!");
         window.location.reload();
@@ -145,12 +151,6 @@ const Write = () => {
                 </button>
               </Link>
               <br />
-              작성자(로그인구현시지울거야):
-              <input
-                value={username}
-                onChange={HandleUsername}
-                placeholder="작성자 닉네임 입력"
-              />
             </div>
           </div>
         </div>
