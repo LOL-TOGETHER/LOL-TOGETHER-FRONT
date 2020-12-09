@@ -16,17 +16,20 @@ const MpLeft = ({
       <div className="mp-profile">
         <h1>프로필사진</h1>
         <div className="box-profile">
-          <img alt="d" className="profile-img" src={profileUrl} />
-          <input
-            type="file"
-            accept="image/jpeg, image/jpg, image/png"
-            className="profile-img"
-            onChange={onChangeProfileUrl}
-          />
+          <img alt="default" className="profile-img" src={profileUrl} />
         </div>
-        <button type="" className="uploadbtn" onClick={onClickProfileUpload}>
-          <img className="uploadbtn-img" src={cameraicon} alt=""></img>
-        </button>
+        <div>
+          <label className="file-input-label">
+            <img src={cameraicon} alt="" className="uploadbtn" />
+            <input
+              className="file-input"
+              type="file"
+              accept="image/jpeg, image/jpg, image/png"
+              onChange={onChangeProfileUrl}
+              src={cameraicon}
+            />
+          </label>
+        </div>
       </div>
 
       <div className="myleft-nickname-container">

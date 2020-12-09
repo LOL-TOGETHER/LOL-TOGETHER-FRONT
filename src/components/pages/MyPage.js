@@ -69,13 +69,11 @@ const MyPage = () => {
     setProfileUrl(e.target.files[0]);
   };
 
-  const onClickProfileUpload = (e) => {
+  const onClickSave = () => {
     const formData = new FormData();
     formData.append("file", profileUrl);
     // axios.post("ServerURl", formData);
-  };
 
-  const onClickSave = () => {
     // axios
     //   .post("ServerUrl", {
     //     champ1: champ[0].engname,
@@ -94,7 +92,6 @@ const MyPage = () => {
       <MpLeft
         onChangeUsername={onChangeUsername}
         username={username}
-        onClickProfileUpload={onClickProfileUpload}
         profileUrl={profileUrl}
         onClickSave={onClickSave}
         onChangeProfileUrl={onChangeProfileUrl}

@@ -199,19 +199,15 @@
 }
 
 .uploadbtn {
-  margin-left: 150px;
-  margin-top: 4px;
-  font-size: 20px;
-  border: transparent;
+  width: 50px;
   border-radius: 50%;
+  margin-left: 150px;
   background-color: transparent;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: 0.1s ease-in-out;
 }
 .uploadbtn:hover {
-  border: transparent;
-  background-color: transparent;
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
@@ -225,7 +221,12 @@
   width: 70%;
   border: none;
 }
-
+.file-input {
+  display: none;
+}
+.file-input-label {
+  background-image: url(../../images/camera.png);
+}
 /* .mp-left-btn {
   margin-left: 4px;
   width: 20%;
