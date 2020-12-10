@@ -29,8 +29,8 @@ const Board = () => {
       })
       .then((response) => {
         setPosts(response.data);
+        console.log(response.data);
       });
-    console.log(posts);
   }, []);
 
   return (
@@ -59,7 +59,7 @@ const Board = () => {
                 <tr>
                   <td className="c0">{post.line}</td>
                   <td className="c1">
-                    <Link to="/readmypage">{post.userName}</Link>
+                    <Link to="/readmypage">{post.name}</Link>
                   </td>
 
                   <td className="c2">

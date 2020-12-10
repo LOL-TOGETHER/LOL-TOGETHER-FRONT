@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../css/ReadMyPage.css";
+import axios from "axios";
 import pfimage from "../../images/Lux.png";
-import line from "../../images/bot.PNG";
+import bot from "../../images/bot.PNG";
+import sup from "../../images/sup.PNG";
+import mid from "../../images/mid.PNG";
+import jug from "../../images/jungle.PNG";
+import top from "../../images/top.PNG";
 
 const ReadMyPage = () => {
+  const [member, setMember] = useState("");
+  const [champ, setChamp] = useState("");
+
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    axios
+      .get("http://13.209.193.142:7000/mypage", {
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        setMember(response.data[0]);
+        setChamp(response.data[0].champions.split(","));
+      });
+  }, []);
+
   return (
     <>
       <h1>상대방이 보는 나의 정보 페이지</h1>
       <div className="rmp-container">
         <div className="rmp-container-left">
           <div className="rmp-left-cont1">
-            <img className="rmp-left-img" src={pfimage} alt="" />
+            <img className="rmp-left-img" src={member.profileUrl} alt="" />
           </div>
           <div className="rmp-left-cont2">
-            <h1>닉네임</h1>
+            <h1>{member.name}</h1>
           </div>
           <div className="rmp-left-cont3">
             <a
               className="rmp-left-atag"
-              href="https://www.op.gg/summoner/userName=노을수리"
+              href={"https://www.op.gg/summoner/userName=" + member.name}
             >
               Op GG전적검색
             </a>
@@ -30,7 +53,31 @@ const ReadMyPage = () => {
               <h1>선호하는 라인</h1>
             </div>
             <div>
-              <img src={line} alt="" className="rmp-right-line-img" />
+              {member.line === "bot" ? (
+                <img src={bot} alt="" className="rmp-right-line-img" />
+              ) : (
+                ""
+              )}
+              {member.line === "sup" ? (
+                <img src={sup} alt="" className="rmp-right-line-img" />
+              ) : (
+                ""
+              )}
+              {member.line === "mid" ? (
+                <img src={mid} alt="" className="rmp-right-line-img" />
+              ) : (
+                ""
+              )}
+              {member.line === "jug" ? (
+                <img src={jug} alt="" className="rmp-right-line-img" />
+              ) : (
+                ""
+              )}
+              {member.line === "top" ? (
+                <img src={top} alt="" className="rmp-right-line-img" />
+              ) : (
+                ""
+              )}
             </div>
           </div>
           <div className="rmp-right-cont2">
@@ -43,42 +90,36 @@ const ReadMyPage = () => {
                 <li className="li-rpm">
                   <div className="li-rpm-1">
                     <img
-                      src={
-                        "https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/MissFortune.png"
-                      }
+                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${champ[0]}.png`}
                       alt=""
                       className="rmp-right-icon"
                     />
                   </div>
-                  <div className="li-rpm-2">미스 포츈</div>
+                  <div className="li-rpm-2">{champ[0]}</div>
                 </li>
               </div>
               <div className="rmp-right-li">
                 <li className="li-rpm">
                   <div className="li-rpm-1">
                     <img
-                      src={
-                        "https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/Caitlyn.png"
-                      }
+                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${champ[1]}.png`}
                       alt=""
                       className="rmp-right-icon"
                     />
                   </div>
-                  <div className="li-rpm-2">케이틀린</div>
+                  <div className="li-rpm-2">{champ[1]}</div>
                 </li>
               </div>
               <div className="rmp-right-li">
                 <li className="li-rpm">
                   <div className="li-rpm-1">
                     <img
-                      src={
-                        "https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/TwistedFate.png"
-                      }
+                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${champ[2]}.png`}
                       alt=""
                       className="rmp-right-icon"
                     />
                   </div>
-                  <div className="li-rpm-2">트위스티드 페이트</div>
+                  <div className="li-rpm-2">{champ[2]}</div>
                 </li>
               </div>
             </ul>

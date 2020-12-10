@@ -13,7 +13,7 @@ const MyPage = () => {
   const [nextId, setNextId] = useState(0);
   const [username, setUsername] = useState("");
   const [buttonState, setButtonState] = useState("");
-
+  const token = localStorage.getItem("token");
   const onClickLine = (e) => {
     setButtonState(e.target.name);
   };
@@ -72,19 +72,27 @@ const MyPage = () => {
   const onClickSave = () => {
     const formData = new FormData();
     formData.append("file", profileUrl);
-    // axios.post("ServerURl", formData);
+    const champions = [champ[0].engname, champ[1].engname, champ[2].engname];
+    const name = username;
 
-    // axios
-    //   .post("ServerUrl", {
-    //     champ1: champ[0].engname,
-    //     champ2: champ[1].engname,
-    //     champ3: champ[2].engname,
-    //     line: buttonState,
-    //     userName: username,
-    //     profileUrl: profileUrl,
-    //   })
-    //   .then(() => {})
-    //   .catch((error) => alert(error));
+    axios
+      .put(
+        "http://13.209.193.142:7000/mypage",
+        {
+          champions: [champions[0], champions[1], champions[2]],
+          line: buttonState,
+          name: name,
+          profileUrl: formData,
+        },
+        {
+          headers: {
+            Authorization: token,
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then(() => {})
+      .catch((error) => alert(error.response.data));
   };
 
   return (
