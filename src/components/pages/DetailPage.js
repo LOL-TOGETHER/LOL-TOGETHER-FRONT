@@ -38,14 +38,6 @@ const DetailPage = () => {
       .then((response) => {
         setPost(response.data[0]);
       });
-
-    axios
-      .get(`http://13.209.193.142:7000/board/comment?boardId=${postId}`)
-      .then((response) => {
-        setComments(response.data);
-        console.log(response.data);
-      });
-    console.log(post);
   }, []);
 
   const onClickComment = () => {

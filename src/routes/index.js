@@ -23,7 +23,7 @@ const Routes = () => {
       <Route path="/detailpage" component={DetailPage} />
       <Route path="/write" exact component={Write} />
       <Route path="/myposts" exact component={MyPosts} />
-      <Route path="/readmypage" exact component={ReadMyPage} />
+      <Route path="/readmypage" component={ReadMyPage} />
     </Switch>
   );
 };
