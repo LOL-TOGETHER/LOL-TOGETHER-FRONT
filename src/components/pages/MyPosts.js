@@ -5,11 +5,10 @@ import formatdate from "../Formatdate";
 
 const MyPosts = () => {
   const [MyPosts, setMyPosts] = useState([]);
-  const [isChanged, setIsChanged] = useState(false);
   const token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get("http://13.209.193.142:7000/board/list", {
+      .get("http://13.209.193.142:7000/board/mylist", {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -18,7 +17,7 @@ const MyPosts = () => {
       .then((response) => {
         setMyPosts(response.data);
       });
-  }, [isChanged]);
+  }, []);
 
   const onClickDelete = (mypostId) => {
     axios

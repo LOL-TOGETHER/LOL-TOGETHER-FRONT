@@ -25,7 +25,7 @@ const ReadMyPage = () => {
         setChamp(response.data[0].champions.split(","));
         console.log(champ);
       });
-  });
+  }, []);
 
   return (
     <>

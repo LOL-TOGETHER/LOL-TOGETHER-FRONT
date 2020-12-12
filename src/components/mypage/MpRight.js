@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../css/MyPage.css";
 import TOP from "../../images/top.PNG";
 import JUG from "../../images/jungle.PNG";
