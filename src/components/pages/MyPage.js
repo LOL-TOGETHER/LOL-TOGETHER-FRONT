@@ -69,9 +69,13 @@ const MyPage = () => {
     setProfileUrl(e.target.files[0]);
   };
 
-  const onClickSave = () => {
+  const onClickSave = (e) => {
     const formData = new FormData();
-    formData.append("file", profileUrl);
+    formData.append("img", profileUrl);
+    axios.post("http://13.209.193.142:7000/upload").then((response) => {
+      setProfileUrl(response.data);
+    });
+
     const champions = [champ[0].engname, champ[1].engname, champ[2].engname];
     const name = username;
 
@@ -82,7 +86,7 @@ const MyPage = () => {
           champions: [champions[0], champions[1], champions[2]],
           line: buttonState,
           name: name,
-          profileUrl: formData,
+          profileUrl: profileUrl,
         },
         {
           headers: {
