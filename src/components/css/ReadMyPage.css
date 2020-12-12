@@ -5,6 +5,7 @@
   height: 350px;
   display: grid;
   grid-template-columns: 250px 550px;
+  grid-template-rows: 350px 100px;
 }
 
 .rmp-container-left {
@@ -126,4 +127,26 @@
   width: 175px;
   margin-top: 10px;
   text-align: center;
+}
+
+.changebutton {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: white;
+  color: rgb(0, 0, 0);
+  padding-left: 44px;
+  padding-right: 44px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.changebutton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+
+.read_gridbtn {
+  display: grid;
+  justify-content: center;
 }

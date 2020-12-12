@@ -6,6 +6,7 @@ import sup from "../../images/sup.PNG";
 import mid from "../../images/mid.PNG";
 import jug from "../../images/jungle.PNG";
 import top from "../../images/top.PNG";
+import { Link } from "react-router-dom";
 
 const ReadMyPage = () => {
   const [member, setMember] = useState("");
@@ -124,6 +125,11 @@ const ReadMyPage = () => {
             </ul>
           </div>
         </div>
+      </div>
+      <div className="read_gridbtn">
+        <Link to="/changemypage">
+          <button className="changebutton">수정하기</button>
+        </Link>
       </div>
     </>
   );

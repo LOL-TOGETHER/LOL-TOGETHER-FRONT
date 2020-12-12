@@ -3,6 +3,7 @@ import champData from "../../static-data/champ-static-data.json";
 import MpLeft from "../mypage/MpLeft";
 import MpRight from "../mypage/MpRight";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import Nami from "../../images/lolicon.jpg";
 import "../css/MyPage.css";
 
@@ -14,6 +15,7 @@ const MyPage = () => {
   const [username, setUsername] = useState("");
   const [buttonState, setButtonState] = useState("");
   const token = localStorage.getItem("token");
+  const history = useHistory();
   const onClickLine = (e) => {
     setButtonState(e.target.name);
   };
@@ -44,7 +46,6 @@ const MyPage = () => {
 
     setNextId(nextId + 1);
     setChamp(nextChamp);
-    console.log(champ);
     setInput("");
   };
 
@@ -66,16 +67,18 @@ const MyPage = () => {
   };
 
   const onChangeProfileUrl = (e) => {
-    setProfileUrl(e.target.files[0]);
+    const fd = new FormData();
+    fd.append("img", e.target.files[0]);
+    axios
+      .post("http://13.209.193.142:7000/upload", fd)
+      .then((response) => {
+        console.log(response.data);
+        setProfileUrl(response.data);
+      })
+      .catch((error) => console.log(error.response));
   };
 
-  const onClickSave = (e) => {
-    const formData = new FormData();
-    formData.append("img", profileUrl);
-    axios.post("http://13.209.193.142:7000/upload").then((response) => {
-      setProfileUrl(response.data);
-    });
-
+  const onClickSave = () => {
     const champions = [champ[0].engname, champ[1].engname, champ[2].engname];
     const name = username;
 
@@ -96,7 +99,8 @@ const MyPage = () => {
         }
       )
       .then(() => {})
-      .catch((error) => alert(error.response.data));
+      .catch((error) => alert(error.response));
+    history.push("/mypage");
   };
 
   return (

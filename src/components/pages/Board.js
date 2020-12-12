@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import querystring from "querystring";
 import "../css/Table.css";
 import axios from "axios";
 import formatdate from "../Formatdate";
@@ -8,25 +9,23 @@ import Pagination from "../Pagination";
 const Board = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
   const reversePosts = posts.slice(0).reverse();
+  const limit = 6;
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-
-  const currentPosts = reversePosts.slice(indexOfFirstPost, indexOfLastPost);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const page = querystring.parse(window.location.search)["?page"] || 0;
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://13.209.193.142:7000/board/list", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      })
+      .get(
+        `http://13.209.193.142:7000/board/list?limit=${limit}&page=${page}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
         setPosts(response.data);
         console.log(response.data);
@@ -54,7 +53,7 @@ const Board = () => {
             </tr>
           </thead>
           <tbody>
-            {currentPosts.map((post) => {
+            {posts.map((post) => {
               return (
                 <tr>
                   <td className="c0">{post.line}</td>
@@ -75,11 +74,7 @@ const Board = () => {
           </tbody>
         </table>
         <div className="pgntion">
-          <Pagination
-            postPerPage={postsPerPage}
-            totalPosts={posts.length}
-            paginate={paginate}
-          />
+          <Pagination postPerPage={limit} totalPosts={currentPage} />
         </div>
       </div>
     </div>

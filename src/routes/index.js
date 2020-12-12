@@ -17,14 +17,14 @@ const Routes = () => {
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/Services" exact component={Services} />
-      <Route path="/mypage" exact component={MyPage} />
+      <Route path="/changemypage" exact component={MyPage} />
       <Route path="/board" exact component={Board} />
       <Route path="/sign-up" exact component={SignUp} />
       <Route path="/log-in" exact component={Login} />
       <Route path="/detailpage" component={DetailPage} />
       <Route path="/write" exact component={Write} />
       <Route path="/myposts" exact component={MyPosts} />
-      <Route path="/readmypage" exact component={ReadMyPage} />
+      <Route path="/mypage" exact component={ReadMyPage} />
       <Route path="/readotherpage" component={ReadOtherPage} />
     </Switch>
   );
