@@ -10,11 +10,11 @@ import top from "../../images/top.PNG";
 const ReadMyPage = () => {
   const [member, setMember] = useState("");
   const [champ, setChamp] = useState("");
-
+  const memberId = window.location.href.split("readotherpage/")[1];
   const token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get("http://13.209.193.142:7000/mypage", {
+      .get(`/mypage/partner/userId=${memberId}`, {
         headers: {
           Authorization: token,
           "Content-Type": "application/json",

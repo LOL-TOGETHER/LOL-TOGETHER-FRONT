@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
@@ -28,14 +28,20 @@ const SignupFunctions = (validate) => {
       return;
     }
     try {
-      await axios.post("http://13.209.193.142:7000/signup", {
-        email: values.email,
-        name: values.username,
-        password: values.password,
-      });
+      await axios
+        .post("http://13.209.193.142:7000/signup", {
+          email: values.email,
+          name: values.username,
+          password: values.password,
+        })
+        .then(() => {
+          alert(
+            "회원가입이 완료되었습니다! 서비스 이용을 위해 로그인을 해주세요~"
+          );
+        });
       history.push("/log-in");
     } catch (error) {
-      alert(error.response.message);
+      alert(error.response);
     }
   };
 

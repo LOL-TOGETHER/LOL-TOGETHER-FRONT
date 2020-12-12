@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../css/MyPage.css";
-import champData from "../../static-data/champ-static-data";
 import TOP from "../../images/top.PNG";
 import JUG from "../../images/jungle.PNG";
 import MID from "../../images/mid.PNG";

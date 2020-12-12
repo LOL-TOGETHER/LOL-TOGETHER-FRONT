@@ -59,14 +59,16 @@ const Board = () => {
                 <tr>
                   <td className="c0">{post.line}</td>
                   <td className="c1">
-                    <Link to="/readmypage">{post.name}</Link>
+                    <Link to={`/readotherpage/${post.member_id}`}>
+                      {post.name}
+                    </Link>
                   </td>
 
                   <td className="c2">
                     <Link to={`/detailpage/${post.id}`}>{post.title}</Link>
                   </td>
 
-                  <td className="c3">{formatdate(post.updated_date_time)}</td>
+                  <td className="c3">{formatdate(post.created_data_time)}</td>
                 </tr>
               );
             })}

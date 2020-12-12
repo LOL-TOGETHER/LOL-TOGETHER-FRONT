@@ -37,7 +37,7 @@ const Write = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: token,
             "Content-Type": "application/json",
           },
         }

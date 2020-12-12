@@ -7,29 +7,31 @@ const DetailPage = () => {
   const [post, setPost] = useState("");
   const [inputComment, setInputComment] = useState("");
   const [comments, setComments] = useState([]);
-  const [commentuser, setCommentuser] = useState("");
 
   const postId = window.location.href.split("detailpage/")[1];
+  const token = localStorage.getItem("token");
 
   const handleCommentContent = (e) => {
     setInputComment(e.target.value);
-  };
-  const handleCommentuser = (e) => {
-    setCommentuser(e.target.value);
   };
 
   const deleteComment = (commentId) => {
     axios
       .delete(
-        `http://13.209.193.142:7000/board/comment?board_Id=${postId}&id=${commentId}`
+        `http://13.209.193.142:7000/board/comment?boardId=${postId}&id=${commentId}`,
+        {
+          headers: {
+            Authorization: token,
+            "Content-Type": "application/json",
+          },
+        }
       )
-      .then(() => {
+      .then((response) => {
         setComments(comments.filter((comment) => comment.id !== commentId));
-        console.log(commentId);
+        alert(response.message);
       })
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error.response));
   };
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const postId = window.location.href.split("detailpage/")[1];
@@ -37,6 +39,19 @@ const DetailPage = () => {
       .get(`http://13.209.193.142:7000/board?boardId=${postId}`)
       .then((response) => {
         setPost(response.data[0]);
+      })
+      .catch((error) => alert(error.response));
+
+    axios
+      .get(`http://13.209.193.142:7000/board/comment?boardId=${postId}`, {
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        setComments(response.data);
+        console.log(response.data);
       });
   }, []);
 
@@ -45,17 +60,17 @@ const DetailPage = () => {
       .post(
         `http://13.209.193.142:7000/board/comment?boardId=${postId}`,
         {
-          userName: commentuser,
           content: inputComment,
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: token,
             "Content-Type": "application/json",
           },
         }
       )
-      .then(() => window.location.reload());
+      .then(() => window.location.reload())
+      .catch((error) => alert(error.response));
   };
   console.log(post);
   const commentlist = comments.map((comment) => (
@@ -95,11 +110,6 @@ const DetailPage = () => {
             <div className="comment_container">
               <h4> 댓글 </h4>
               <div className="comment_write">
-                <input
-                  value={commentuser}
-                  onChange={handleCommentuser}
-                  placeholder="닉네임(인증구현되면지움)"
-                />
                 <textarea
                   rows="3"
                   maxLength="100"

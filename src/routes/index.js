@@ -10,6 +10,7 @@ import DetailPage from "../components/pages/DetailPage";
 import Write from "../components/pages/Write";
 import MyPosts from "../components/pages/MyPosts";
 import ReadMyPage from "../components/pages/ReadMyPage";
+import ReadOtherPage from "../components/pages/ReadOtherPage";
 
 const Routes = () => {
   return (
@@ -23,7 +24,8 @@ const Routes = () => {
       <Route path="/detailpage" component={DetailPage} />
       <Route path="/write" exact component={Write} />
       <Route path="/myposts" exact component={MyPosts} />
-      <Route path="/readmypage" component={ReadMyPage} />
+      <Route path="/readmypage" exact component={ReadMyPage} />
+      <Route path="/readotherpage" component={ReadOtherPage} />
     </Switch>
   );
 };
