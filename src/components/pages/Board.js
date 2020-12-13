@@ -8,9 +8,9 @@ import Pagination from "../Pagination";
 
 const Board = () => {
   const [posts, setPosts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(1);
   const reversePosts = posts.slice(0).reverse();
-  const limit = 12;
+  const limit = 10;
 
   const page = querystring.parse(window.location.search)["?page"] || 0;
 
@@ -18,7 +18,7 @@ const Board = () => {
     const token = localStorage.getItem("token");
     axios
       .get(
-        `http://13.209.193.142:7000/board/list?limit=${limit}&page=${page}`,
+        `http://13.209.193.142:7000/board/list?page=${page}&limit=${limit}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -27,10 +27,11 @@ const Board = () => {
         }
       )
       .then((response) => {
-        setPosts(response.data);
-        console.log(response.data);
-      });
-  }, []);
+        setPosts(response.data.response);
+        setTotalCount(response.data.count.total);
+      })
+      .catch((error) => alert(error));
+  }, [page]);
 
   return (
     <div>
@@ -58,7 +59,7 @@ const Board = () => {
                 <tr>
                   <td className="c0">
                     {post.line === "mid" ? "미드" : ""}
-                    {post.line === "bot" ? "바텀" : ""}
+                    {post.line === "bot" ? "원딜" : ""}
                     {post.line === "jug" ? "정글" : ""}
                     {post.line === "top" ? "탑" : ""}
                     {post.line === "sup" ? "서폿" : ""}
@@ -80,7 +81,7 @@ const Board = () => {
           </tbody>
         </table>
         <div className="pgntion">
-          <Pagination postPerPage={limit} totalPosts={currentPage} />
+          <Pagination postPerPage={limit} totalPosts={totalCount} />
         </div>
       </div>
     </div>

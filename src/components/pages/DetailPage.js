@@ -36,11 +36,17 @@ const DetailPage = () => {
   useEffect(() => {
     const postId = window.location.href.split("detailpage/")[1];
     axios
-      .get(`http://13.209.193.142:7000/board?boardId=${postId}`)
+      .get(`http://13.209.193.142:7000/board?boardId=${postId}`, {
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => {
+        console.log(response.data);
         setPost(response.data[0]);
       })
-      .catch((error) => alert(error.response));
+      .catch((error) => console.log(error.response));
 
     axios
       .get(`http://13.209.193.142:7000/board/comment?boardId=${postId}`, {

@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/MyPage.css";
 import cameraicon from "../../images/camera.png";
-import { Link } from "react-router-dom";
 
 const MpLeft = ({
   username,
