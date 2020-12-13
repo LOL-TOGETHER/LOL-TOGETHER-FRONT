@@ -10,21 +10,22 @@ import top from "../../images/top.PNG";
 const ReadMyPage = () => {
   const [member, setMember] = useState("");
   const [champ, setChamp] = useState("");
-  const memberId = window.location.href.split("readotherpage/")[1];
+  const memberId = window.location.href.split("/mypage/partner/")[1];
   const token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get(`/mypage/partner/userId=${memberId}`, {
+      .get(`http://13.209.193.142:7000/mypage/partner/userId=${memberId}`, {
         headers: {
           Authorization: token,
           "Content-Type": "application/json",
         },
       })
       .then((response) => {
-        console.log(response.data);
+        console.log(response);
         setMember(response.data[0]);
         setChamp(response.data.champions.split(","));
-      });
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   return (

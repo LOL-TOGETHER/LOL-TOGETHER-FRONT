@@ -17,18 +17,15 @@ const DetailPage = () => {
 
   const deleteComment = (commentId) => {
     axios
-      .delete(
-        `http://13.209.193.142:7000/board/comment?boardId=${postId}&id=${commentId}`,
-        {
-          headers: {
-            Authorization: token,
-            "Content-Type": "application/json",
-          },
-        }
-      )
+      .delete(`http://13.209.193.142:7000/board/comment?boardId=${postId}`, {
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => {
         setComments(comments.filter((comment) => comment.id !== commentId));
-        alert(response.message);
+        alert("삭제되었습니다!");
       })
       .catch((error) => console.log(error.response));
   };
