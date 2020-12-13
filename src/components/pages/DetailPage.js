@@ -55,8 +55,8 @@ const DetailPage = () => {
         },
       })
       .then((response) => {
-        console.log(response);
         setComments(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error.response);
@@ -66,7 +66,7 @@ const DetailPage = () => {
   const onClickComment = () => {
     axios
       .post(
-        `http://13.209.193.142:7000/board?boardId=${postId}`,
+        `http://13.209.193.142:7000/board/comment?boardId=${postId}`,
         {
           content: inputComment,
         },
@@ -77,17 +77,19 @@ const DetailPage = () => {
           },
         }
       )
-      .then(() => window.location.reload())
-      .catch((error) => alert(error.response));
+      .then(() => {
+        window.location.reload();
+      })
+      .catch((error) => console.log(error.response));
   };
-  console.log(post);
+
   const commentlist = comments.map((comment) => (
     <li key={comment.id}>
       <div className="comment-mapli">
-        <div className="com-username"> {comment.userName}</div>
+        <div className="com-username"> {comment.name}</div>
         <div className="com-content">{comment.content}</div>
         <div className="com-time-delete">
-          {formatDate(comment.updated_data_time)}
+          {formatDate(comment.created_data_time)}
           <button
             className="com-delete-btn"
             type="button"

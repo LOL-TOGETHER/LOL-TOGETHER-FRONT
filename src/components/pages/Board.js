@@ -9,7 +9,7 @@ import Pagination from "../Pagination";
 const Board = () => {
   const [posts, setPosts] = useState([]);
   const [totalCount, setTotalCount] = useState(1);
-  const reversePosts = posts.slice(0).reverse();
+  // const reversePosts = posts.slice(0).reverse();
   const limit = 10;
 
   const page = querystring.parse(window.location.search)["?page"] || 0;
@@ -54,7 +54,7 @@ const Board = () => {
             </tr>
           </thead>
           <tbody>
-            {reversePosts.map((post) => {
+            {posts.map((post) => {
               return (
                 <tr>
                   <td className="c0">
