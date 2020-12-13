@@ -25,7 +25,7 @@ const Routes = () => {
       <Route path="/write" exact component={Write} />
       <Route path="/myposts" exact component={MyPosts} />
       <Route path="/mypage" exact component={ReadMyPage} />
-      <Route path="/readotherpage" component={ReadOtherPage} />
+      <Route path="/mypage/partner/" component={ReadOtherPage} />
     </Switch>
   );
 };

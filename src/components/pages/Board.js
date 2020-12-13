@@ -10,7 +10,7 @@ const Board = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const reversePosts = posts.slice(0).reverse();
-  const limit = 6;
+  const limit = 12;
 
   const page = querystring.parse(window.location.search)["?page"] || 0;
 
@@ -56,9 +56,15 @@ const Board = () => {
             {posts.map((post) => {
               return (
                 <tr>
-                  <td className="c0">{post.line}</td>
+                  <td className="c0">
+                    {post.line === "mid" ? "미드" : ""}
+                    {post.line === "bot" ? "바텀" : ""}
+                    {post.line === "jug" ? "정글" : ""}
+                    {post.line === "top" ? "탑" : ""}
+                    {post.line === "sup" ? "서폿" : ""}
+                  </td>
                   <td className="c1">
-                    <Link to={`/readotherpage/${post.member_id}`}>
+                    <Link to={`/mypage/partner/${post.memberId}`}>
                       {post.name}
                     </Link>
                   </td>
