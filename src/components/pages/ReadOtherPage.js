@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import champData from "../../static-data/champ-static-data.json";
 import "../css/ReadMyPage.css";
 import axios from "axios";
 import bot from "../../images/bot.PNG";
@@ -14,16 +15,16 @@ const ReadMyPage = () => {
   const token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get(`http://13.209.193.142:7000/mypage/partner/userId=${memberId}`, {
+      .get(`http://13.209.193.142:7000/mypage/partner?userId=${memberId}`, {
         headers: {
           Authorization: token,
           "Content-Type": "application/json",
         },
       })
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
         setMember(response.data[0]);
-        setChamp(response.data.champions.split(","));
+        setChamp(response.data[0].champions.split(","));
       })
       .catch((error) => console.log(error));
   }, []);
@@ -95,7 +96,9 @@ const ReadMyPage = () => {
                       className="rmp-right-icon"
                     />
                   </div>
-                  <div className="li-rpm-2">{champ[0]}</div>
+                  <div className="li-rpm-2">
+                    {champ[0] ? champData.data[champ[0]].name : ""}
+                  </div>
                 </li>
               </div>
               <div className="rmp-right-li">
@@ -107,7 +110,9 @@ const ReadMyPage = () => {
                       className="rmp-right-icon"
                     />
                   </div>
-                  <div className="li-rpm-2">{champ[1]}</div>
+                  <div className="li-rpm-2">
+                    {champ[1] ? champData.data[champ[1]].name : ""}
+                  </div>
                 </li>
               </div>
               <div className="rmp-right-li">
@@ -119,7 +124,9 @@ const ReadMyPage = () => {
                       className="rmp-right-icon"
                     />
                   </div>
-                  <div className="li-rpm-2">{champ[2]}</div>
+                  <div className="li-rpm-2">
+                    {champ[2] ? champData.data[champ[2]].name : ""}
+                  </div>
                 </li>
               </div>
             </ul>
