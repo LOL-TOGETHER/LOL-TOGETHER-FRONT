@@ -54,7 +54,7 @@ const Board = () => {
             </tr>
           </thead>
           <tbody>
-            {posts.map((post) => {
+            {reversePosts.map((post) => {
               return (
                 <tr>
                   <td className="c0">
