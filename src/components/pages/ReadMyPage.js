@@ -26,8 +26,6 @@ const ReadMyPage = () => {
         setMember(response.data[0]);
         setChamp(response.data[0].champions.split(","));
       });
-
-    console.log(champData.data[champ[0]]);
   }, []);
 
   return (

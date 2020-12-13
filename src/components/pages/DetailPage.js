@@ -43,7 +43,6 @@ const DetailPage = () => {
         },
       })
       .then((response) => {
-        console.log(response.data);
         setPost(response.data[0]);
       })
       .catch((error) => console.log(error.response));
@@ -67,7 +66,7 @@ const DetailPage = () => {
   const onClickComment = () => {
     axios
       .post(
-        `http://13.209.193.142:7000/board/comment?boardId=${postId}`,
+        `http://13.209.193.142:7000/board?boardId=${postId}`,
         {
           content: inputComment,
         },
