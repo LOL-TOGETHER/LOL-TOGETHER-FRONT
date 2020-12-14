@@ -110,7 +110,9 @@ const DetailPage = () => {
           <div className="detail-shadow">
             <div className="title">
               <h1>{post.title}</h1>
-              <p>{post.name}</p>
+              <p>
+                <Link to={`/mypage/partner/${post.memberId}`}>{post.name}</Link>
+              </p>
               <h6>{post.updated_date_time}</h6>
             </div>
             <div className="content-dt">
