@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import champData from "../../static-data/champ-static-data.json";
 import { useHistory } from "react-router-dom";
+import champData from "../../static-data/champ-static-data.json";
 import "../css/ReadMyPage.css";
 import axios from "axios";
 import bot from "../../images/bot.PNG";
@@ -24,15 +24,13 @@ const ReadMyPage = () => {
         },
       })
       .then((response) => {
-        if (!response.data[0].champions) {
-          alert(
-            "설정한 챔피언 정보가 존재하지 않습니다. 마이페이지를 설정하세요!"
-          );
-          history.push("/changemypage");
-        } else {
-          setMember(response.data[0]);
-          setChamp(response.data[0].champions.split(""));
-        }
+        setMember(response.data[0]);
+        setChamp(response.data[0].champions);
+        console.log(champ);
+      })
+      .catch((error) => {
+        alert("마이페이지의 정보를 설정해주세요!");
+        window.location.href = "/changemypage";
       });
   }, []);
 
@@ -98,13 +96,15 @@ const ReadMyPage = () => {
                 <li className="li-rpm">
                   <div className="li-rpm-1">
                     <img
-                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${champ[0]}.png`}
+                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${
+                        champ.split(",")[0]
+                      }.png`}
                       alt=""
                       className="rmp-right-icon"
                     />
                   </div>
                   <div className="li-rpm-2">
-                    {champ[0] ? champData.data[champ[0]].name : ""}
+                    {champ[0] ? champData.data[champ.split(",")[0]].name : ""}
                   </div>
                 </li>
               </div>
@@ -112,13 +112,15 @@ const ReadMyPage = () => {
                 <li className="li-rpm">
                   <div className="li-rpm-1">
                     <img
-                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${champ[1]}.png`}
+                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${
+                        champ.split(",")[1]
+                      }.png`}
                       alt=""
                       className="rmp-right-icon"
                     />
                   </div>
                   <div className="li-rpm-2">
-                    {champ[1] ? champData.data[champ[1]].name : ""}
+                    {champ[1] ? champData.data[champ.split(",")[1]].name : ""}
                   </div>
                 </li>
               </div>
@@ -126,13 +128,15 @@ const ReadMyPage = () => {
                 <li className="li-rpm">
                   <div className="li-rpm-1">
                     <img
-                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${champ[2]}.png`}
+                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${
+                        champ.split(",")[2]
+                      }.png`}
                       alt=""
                       className="rmp-right-icon"
                     />
                   </div>
                   <div className="li-rpm-2">
-                    {champ[2] ? champData.data[champ[2]].name : ""}
+                    {champ[2] ? champData.data[champ.split(",")[2]].name : ""}
                   </div>
                 </li>
               </div>
