@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../css/DetailPage.css";
 import formatDate from "../Formatdate";
+import { Link } from "react-router-dom";
 
 const DetailPage = () => {
   const [post, setPost] = useState("");
@@ -82,7 +83,9 @@ const DetailPage = () => {
   const commentlist = comments.map((comment) => (
     <li key={comment.id}>
       <div className="comment-mapli">
-        <div className="com-username"> {comment.name}</div>
+        <div className="com-username">
+          <Link to={`/mypage/partner/${comment.memberId}`}>{comment.name}</Link>
+        </div>
         <div className="com-content">{comment.content}</div>
         <div className="com-time-delete">
           {formatDate(comment.created_data_time)}
