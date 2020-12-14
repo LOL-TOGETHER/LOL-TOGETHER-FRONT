@@ -26,7 +26,7 @@ const ReadMyPage = () => {
       .then((response) => {
         setMember(response.data[0]);
         setChamp(response.data[0].champions);
-        console.log(champ);
+        console.log(response.data[0]);
       })
       .catch((error) => {
         alert("마이페이지의 정보를 설정해주세요!");
@@ -74,7 +74,7 @@ const ReadMyPage = () => {
               ) : (
                 ""
               )}
-              {member.line === "jug" ? (
+              {member.line === "jungle" ? (
                 <img src={jug} alt="" className="rmp-right-line-img" />
               ) : (
                 ""

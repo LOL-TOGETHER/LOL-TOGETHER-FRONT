@@ -23,11 +23,11 @@ const DetailPage = () => {
           "Content-Type": "application/json",
         },
       })
-      .then((response) => {
+      .then(() => {
         setComments(comments.filter((comment) => comment.id !== commentId));
         alert("삭제되었습니다!");
       })
-      .catch((error) => console.log(error.response));
+      .catch((error) => alert(error.response));
   };
 
   useEffect(() => {
