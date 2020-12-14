@@ -22,11 +22,10 @@ const ReadMyPage = () => {
         },
       })
       .then((response) => {
-        console.log(response.data);
         setMember(response.data[0]);
         setChamp(response.data[0].champions.split(","));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(error));
   }, []);
 
   return (

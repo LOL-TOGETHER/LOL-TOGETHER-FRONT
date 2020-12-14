@@ -24,9 +24,9 @@ const ReadMyPage = () => {
         },
       })
       .then((response) => {
+        console.log(response.data[0]);
         setMember(response.data[0]);
         setChamp(response.data[0].champions);
-        console.log(response.data[0]);
       })
       .catch((error) => {
         alert("마이페이지의 정보를 설정해주세요!");
@@ -92,54 +92,22 @@ const ReadMyPage = () => {
             </div>
 
             <ul className="rpm-right-cont2-2">
-              <div className="rmp-right-li">
-                <li className="li-rpm">
-                  <div className="li-rpm-1">
-                    <img
-                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${
-                        champ.split(",")[0]
-                      }.png`}
-                      alt=""
-                      className="rmp-right-icon"
-                    />
-                  </div>
-                  <div className="li-rpm-2">
-                    {champ[0] ? champData.data[champ.split(",")[0]].name : ""}
-                  </div>
-                </li>
-              </div>
-              <div className="rmp-right-li">
-                <li className="li-rpm">
-                  <div className="li-rpm-1">
-                    <img
-                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${
-                        champ.split(",")[1]
-                      }.png`}
-                      alt=""
-                      className="rmp-right-icon"
-                    />
-                  </div>
-                  <div className="li-rpm-2">
-                    {champ[1] ? champData.data[champ.split(",")[1]].name : ""}
-                  </div>
-                </li>
-              </div>
-              <div className="rmp-right-li">
-                <li className="li-rpm">
-                  <div className="li-rpm-1">
-                    <img
-                      src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${
-                        champ.split(",")[2]
-                      }.png`}
-                      alt=""
-                      className="rmp-right-icon"
-                    />
-                  </div>
-                  <div className="li-rpm-2">
-                    {champ[2] ? champData.data[champ.split(",")[2]].name : ""}
-                  </div>
-                </li>
-              </div>
+              {champ.split(",").map((c) => (
+                <div className="rmp-right-li">
+                  <li className="li-rpm">
+                    <div className="li-rpm-1">
+                      <img
+                        src={`https://ddragon.leagueoflegends.com/cdn/10.24.1/img/champion/${c}.png`}
+                        alt=""
+                        className="rmp-right-icon"
+                      />
+                    </div>
+                    <div className="li-rpm-2">
+                      {champ[0] ? champData.data[c].name : ""}
+                    </div>
+                  </li>
+                </div>
+              ))}
             </ul>
           </div>
         </div>

@@ -27,7 +27,6 @@ const Board = () => {
         }
       )
       .then((response) => {
-        console.log(response.data.response);
         setPosts(response.data.response);
         setTotalCount(response.data.count.total);
       })

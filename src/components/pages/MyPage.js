@@ -72,21 +72,21 @@ const MyPage = () => {
     axios
       .post("http://13.209.193.142:7000/upload", fd)
       .then((response) => {
-        console.log(response.data);
         setProfileUrl(response.data);
       })
-      .catch((error) => console.log(error.response));
+      .catch((error) => alert(error.response));
   };
 
   const onClickSave = () => {
-    const champions = [champ[0].engname, champ[1].engname, champ[2].engname];
     const name = username;
-
+    const champs = champ.map((c) => {
+      return c.engname;
+    });
     axios
       .put(
         "http://13.209.193.142:7000/mypage",
         {
-          champions: [champions[0], champions[1], champions[2]],
+          champions: champs,
           line: buttonState,
           name: name,
           profileUrl: profileUrl,

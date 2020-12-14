@@ -22,9 +22,7 @@ const LoginForm = ({ isloggedin, setIsLoggedIn }) => {
         window.location.replace("/board");
         setIsLoggedIn(true);
       })
-      .catch((error) => {
-        console.log(error.response);
-      });
+      .catch((error) => {});
   };
 
   return (

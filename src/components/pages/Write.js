@@ -46,8 +46,6 @@ const Write = () => {
         alert("작성완료!");
         window.location.reload();
       });
-
-    console.log(title);
   };
 
   return (

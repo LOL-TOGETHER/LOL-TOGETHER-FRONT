@@ -42,7 +42,7 @@ const DetailPage = () => {
       .then((response) => {
         setPost(response.data[0]);
       })
-      .catch((error) => console.log(error.response));
+      .catch((error) => alert(error.response));
 
     axios
       .get(`http://13.209.193.142:7000/board/comment?boardId=${postId}`, {
@@ -53,10 +53,9 @@ const DetailPage = () => {
       })
       .then((response) => {
         setComments(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
-        console.log(error.response);
+        alert(error.response);
       });
   }, []);
 
@@ -77,7 +76,7 @@ const DetailPage = () => {
       .then(() => {
         window.location.reload();
       })
-      .catch((error) => console.log(error.response));
+      .catch((error) => alert(error));
   };
 
   const commentlist = comments.map((comment) => (
