@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import champData from "../../static-data/champ-static-data.json";
+import { useHistory } from "react-router-dom";
 import "../css/ReadMyPage.css";
 import axios from "axios";
 import bot from "../../images/bot.PNG";
@@ -12,7 +13,7 @@ import { Link } from "react-router-dom";
 const ReadMyPage = () => {
   const [member, setMember] = useState("");
   const [champ, setChamp] = useState("");
-
+  const history = useHistory();
   const token = localStorage.getItem("token");
   useEffect(() => {
     axios
@@ -23,8 +24,15 @@ const ReadMyPage = () => {
         },
       })
       .then((response) => {
-        setMember(response.data[0]);
-        setChamp(response.data[0].champions.split(","));
+        if (!response.data[0].champions) {
+          alert(
+            "설정한 챔피언 정보가 존재하지 않습니다. 마이페이지를 설정하세요!"
+          );
+          history.push("/changemypage");
+        } else {
+          setMember(response.data[0]);
+          setChamp(response.data[0].champions.split(""));
+        }
       });
   }, []);
 
