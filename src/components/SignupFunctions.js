@@ -37,12 +37,10 @@ const SignupFunctions = (validate) => {
         .then(() => {
           alert(
             "회원가입이 완료되었습니다! 서비스 이용을 위해 로그인을 해주세요~"
-          );
+          ).catch((error) => alert(error));
         });
       history.push("/log-in");
-    } catch (error) {
-      alert(error.response);
-    }
+    } catch (error) {}
   };
 
   return {
