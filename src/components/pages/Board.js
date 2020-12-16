@@ -62,12 +62,16 @@ const Board = () => {
                     {post.line === "bot" ? "원딜" : ""}
                     {post.line === "jug" ? "정글" : ""}
                     {post.line === "top" ? "탑" : ""}
-                    {post.line === "sup" ? "서폿" : ""}
+                    {post.line === "sup" ? "서폿" : ""}{" "}
                   </td>
                   <td className="c1">
-                    <Link to={`/mypage/partner/${post.memberId}`}>
-                      {post.name}
-                    </Link>
+                    {post.name ? (
+                      <Link to={`/mypage/partner/${post.memberId}`}>
+                        {post.name}
+                      </Link>
+                    ) : (
+                      "닉네임미지정"
+                    )}
                   </td>
 
                   <td className="c2">
